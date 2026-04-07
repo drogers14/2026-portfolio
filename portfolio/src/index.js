@@ -1,0 +1,33 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { BrowserRouter, Routes, Route } from "react-router";
+import { Navbar } from './Navbar';
+import Contact from './components/Contact';
+import Experience from './components/Experience'
+import Education from './components/Education'
+import Stack from './components/Stack'
+import reportWebVitals from './reportWebVitals';
+import App from './App';
+
+const root = document.getElementById("root");
+
+ReactDOM.createRoot(root).render(
+  
+  <BrowserRouter>
+  <Navbar/>
+<Routes>
+      <Route path="/" element={<App />} />
+      <Route path='/experience' element={<Experience/>}/>
+      <Route path='/education' element={<Education/>}/>
+      <Route path='/stack' element={<Stack/>}/>
+      <Route path='/contact-me' element={<Contact/>}/>
+
+    </Routes>
+  </BrowserRouter>,
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
