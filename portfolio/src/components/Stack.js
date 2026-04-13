@@ -4,9 +4,9 @@ import { RadarChart } from '@mui/x-charts/RadarChart';
 import { BarChart } from '@mui/x-charts/BarChart';
 import Marquee from "react-fast-marquee";
 import { IoMdGitMerge, IoLogoPython, IoLogoJavascript } from "react-icons/io";
-import { FaReact, FaDocker, FaJenkins, FaTools, FaRobot} from "react-icons/fa";
+import { FaReact, FaDocker, FaJenkins, FaTools, FaRobot, FaHtml5} from "react-icons/fa";
 import { DiGoogleCloudPlatform } from "react-icons/di";
-import { SiCplusplus } from "react-icons/si";
+import { SiCplusplus, SiVercel } from "react-icons/si";
 
 const skills = [
     { name: 'JavaScript', level: 90 },
@@ -44,7 +44,7 @@ function Stack() {
       series={[{  data: [100, 98, 65, 70, 85, 95] }]}
       radar={{
         max: 120,
-        metrics: ['Frontend', 'Testing', 'Backend', 'AI/ML', 'Cloud', 'Debugging & Root Cause Analysis'],
+        metrics: ['Frontend', 'Testing', 'Backend', 'AI/ML', 'CI/CD', 'Debugging & Root Cause Analysis'],
       }}
     />
     :
@@ -94,6 +94,10 @@ function Stack() {
     <span className="tag"><FaTools /> Playwright</span>
     <span className="tag"><SiCplusplus /> C++</span>
     <span className="tag"><FaRobot /> OpenCV</span>
+    <span className="tag"><FaHtml5 /> HTML</span>
+    <span className="tag"> <SiVercel /> Vercel</span>
+
+   
 
   </Marquee>
 </div>
