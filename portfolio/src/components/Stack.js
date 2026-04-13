@@ -4,7 +4,7 @@ import { RadarChart } from '@mui/x-charts/RadarChart';
 import { BarChart } from '@mui/x-charts/BarChart';
 import Marquee from "react-fast-marquee";
 import { IoMdGitMerge, IoLogoPython, IoLogoJavascript } from "react-icons/io";
-import { FaReact, FaDocker, FaJenkins,  FaTools} from "react-icons/fa";
+import { FaReact, FaDocker, FaJenkins, FaTools, FaRobot} from "react-icons/fa";
 import { DiGoogleCloudPlatform } from "react-icons/di";
 import { SiCplusplus } from "react-icons/si";
 
@@ -25,7 +25,7 @@ function Stack() {
     <div className="">
       <h2>Technical Skills</h2>
       {/* <div style={{ display: "flex", gap: "10px", alignItems: "center" }}> */}
-      <label className="switch">
+      {/* <label className="switch">
   <input
     type="checkbox"
     checked={showRadar}
@@ -34,14 +34,14 @@ function Stack() {
   <span className="slider">
     <span className="label left">Radar</span>
     <span className="label right">Bar</span>
-  </span>
-</label>
+  </span> */}
+{/* </label> */}
 
 {/* </div> */}
    {showRadar  ?
     <RadarChart
       height={300}
-      series={[{  data: [120, 98, 65, 70, 85, 95] }]}
+      series={[{  data: [100, 98, 65, 70, 85, 95] }]}
       radar={{
         max: 120,
         metrics: ['Frontend', 'Testing', 'Backend', 'AI/ML', 'Cloud', 'Debugging & Root Cause Analysis'],
@@ -93,6 +93,8 @@ function Stack() {
     <span className="tag"><DiGoogleCloudPlatform /> GCP</span>
     <span className="tag"><FaTools /> Playwright</span>
     <span className="tag"><SiCplusplus /> C++</span>
+    <span className="tag"><FaRobot /> OpenCV</span>
+
   </Marquee>
 </div>
     </div>

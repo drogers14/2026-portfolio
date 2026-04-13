@@ -5,6 +5,7 @@ import IntroCard from './components/IntroCard';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Stack from './components/Stack';
+import Projects from "./components/Projects";
 import { Navbar } from './Navbar';
 
 
@@ -50,6 +51,9 @@ function App() {
       </div>
       <div id="education">
       <Education  />
+      </div>
+      <div id="projects">
+      <Projects  />
       </div>
     </div>
   );

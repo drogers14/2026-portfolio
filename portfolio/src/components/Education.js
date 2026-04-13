@@ -37,6 +37,11 @@ const coursework = {
         details: "Built full-stack applications using modern frameworks.",
         projects: ["React app with API integration"],
       },
+      {
+        name: "Client Side App Development",
+        details: "Built full-stack applications using modern frameworks.",
+        projects: ["React app with API integration"],
+      },
     ],
     "💻 Software Engineering": [
         {

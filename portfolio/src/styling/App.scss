@@ -1,4 +1,17 @@
 :root {
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+
+  --title-font: system-ui, sans-serif;
+
+  --title-hero: 3.5rem;
+  --title-section: 2rem;
+  --title-sub: 1.25rem;
+
+  --title-weight: 800;
+
+  --title-spacing: -0.03em;
   --black: rgb(46, 45, 43);
   /* Primary blues */
   --fa-blue-1: #00c6ff;
@@ -38,7 +51,8 @@ html {
 
 }
 body {
-  background: linear-gradient(180deg, #dff6ff, #ffffff);
+  // background: linear-gradient(180deg, #dff6ff, #ffffff);
+
   font-family: system-ui, sans-serif;
 }
 .App {
@@ -46,6 +60,9 @@ body {
   height: 100vh;
   padding-top: 80px; /* match your nav height */
   background: linear-gradient(180deg, #dff6ff, #ffffff);
+  // background-image: linear-gradient(180deg, #dff6ff, #ffffff
+  //   ), 
+  // url('../cardboard-texture.jpg');
 
   // background-image: linear-gradient(rgba(242, 242, 242, 0.5),
   // rgba(242, 242, 242, 0.5)
