@@ -1,0 +1,177 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 120px;   /* wider for text */
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* background */
+  .slider {
+    position: absolute;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* moving knob */
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    top: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  /* labels */
+  .label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    font-weight: 600;
+    pointer-events: none;
+    transition: 0.3s;
+  }
+  
+  .label.left {
+    left: 12px;
+    color: white;
+    opacity: 1;
+  }
+  
+  .label.right {
+    right: 12px;
+    color: white;
+    opacity: 0.4;
+  }
+  
+  /* checked state */
+  .switch input:checked + .slider {
+    background-color: #4f46e5;
+  }
+  
+  .switch input:checked + .slider::before {
+    transform: translateX(86px);
+  }
+  
+  /* swap label emphasis */
+  .switch input:checked + .slider .label.left {
+    opacity: 0.4;
+  }
+  
+  .switch input:checked + .slider .label.right {
+    opacity: 1;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .skill-category h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--fa-blue-2);
+  }
+  
+  /* pill container */
+  .skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  /* individual skill */
+  .skill-pill {
+    padding: 8px 16px;
+    border-radius: 20px;
+  
+    background: linear-gradient(
+      135deg,
+      var(--fa-aqua),
+      var(--fa-blue-1)
+    );
+  
+    color: white;
+    font-size: 14px;
+  
+    box-shadow:
+      inset 0 2px 6px rgba(255,255,255,0.6),
+      0 4px 12px var(--fa-glow);
+  
+    transition: all 0.3s ease;
+  }
+  
+  .skill-pill:hover {
+    transform: scale(1.08);
+  
+    box-shadow:
+      0 0 20px var(--fa-glow),
+      inset 0 2px 8px rgba(255,255,255,0.8);
+  }
+  .skills-chart {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  /* bar color */
+  .MuiBarElement-root {
+    fill: url(#gradient);
+  }
+  
+  /* labels inside bars */
+  .MuiBarLabel-root {
+    fill: white;
+    font-weight: 600;
+  }
+  
+  /* axis labels (skill names) */
+  .MuiChartsAxis-tickLabel {
+    fill: #0072ff;
+    font-size: 14px;
+  }
+  .tags {
+    overflow: hidden;
+  }
+  
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  
+    margin-right: 16px;
+    padding: 8px 14px;
+  
+    border-radius: 999px;
+  
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+  
+    font-size: 14px;
+  
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  
+  .tag:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .tag svg {
+    font-size: 16px;
+    opacity: 0.9;
+  }

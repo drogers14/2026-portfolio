@@ -1,9 +1,11 @@
-import '../App.css';
+import '../styling/App.scss';
+import Timeline from './Timeline';
 
 function Experience() {
   return (
-    <div className="">
+    <div className="card">
       Experience
+      <Timeline />
     </div>
   );
 }
