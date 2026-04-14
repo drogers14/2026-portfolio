@@ -114,9 +114,10 @@ body {
 }
 .mini-label {
   font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
   opacity: 0.5;
-  margin-bottom: 6px;
-  letter-spacing: 0.05em;
 }
 
 .grid-container {
@@ -124,28 +125,73 @@ body {
   grid-template-columns: 1.2fr 0.8fr;
   gap: 40px;
   align-items: center;
+}
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
+  min-width: 0;
   max-width: 100%;
-  overflow: hidden; /* 🔥 prevents right-side spill */
 }
 
-  right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  
-    min-width: 0;        /* 🔥 critical for grid overflow bugs */
-    max-width: 100%;
-    border: 2px solid red;
-
-  // min-width: 320px; /* 🔥 prevents collapse */
-}
 .right img {
-  width: min(360px, 100%);
-  height: auto;
+  width: 240px;
+  height: 240px;
+
   object-fit: cover;
+  border-radius: 50%;
+
   display: block;
+
+  /* subtle depth */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
 }
+.social-bar {
+  display: flex;
+  gap: 10px;
+
+  padding: 6px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.social-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  color: #111;
+
+  transition: all 0.2s ease;
+}
+.social-bar a:hover {
+  transform: translateY(-2px);
+
+  background: rgba(0, 0, 0, 0.05);
+}
+.social-bar svg {
+  font-size: 16px;
+}
+
 .image-wrapper {
   width: 100%;
   display: flex;
@@ -656,4 +702,34 @@ background: var(--black);
 #wcb {
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(10px);
+}
+
+.portrait-system {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-arc {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.social-arc a:nth-child(1) {
+  transform: translateY(6px);
+}
+
+.social-arc a:nth-child(2) {
+  transform: translateY(0px);
+}
+
+.social-arc a:nth-child(3) {
+  transform: translateY(6px);
 }

@@ -136,19 +136,19 @@ function IntroCard() {
                 </div>
             </div>
             <div className="right">
-                <div className="image-wrapper">
-                    <Image />
-                </div>
-                <p className="mini-label">Connect with me</p>
-                <div className="social-row-right">
-                    <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link={"https://www.linkedin.com/in/destiny-rogers/"} />
-                    <Social label="GitHub" icon={FaGithub} type="github" link={"https://github.com/drogers14"} />
-                    <Social label="Email" icon={MdEmail} type="email" link={"destinyrogers725@gmail.com"}/>
-                </div>
+  <div className="portrait-system">
+    <Image />
 
-            </div>
+    <div className="social-bar">
+      <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link="https://www.linkedin.com/in/destiny-rogers/" />
+      <Social label="GitHub" icon={FaGithub} type="github" link="https://github.com/drogers14" />
+      <Social label="Email" icon={MdEmail} type="email" link="mailto:destinyrogers725@gmail.com" />
+    </div>
 
-        </div>
+    <p className="mini-label">Connect with me</p>
+  </div>
+</div>
+</div>
     );
 }
 

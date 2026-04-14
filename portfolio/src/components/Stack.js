@@ -27,7 +27,7 @@ function Stack() {
         <div className="">
             <h2>Technical Skills</h2>
             <p className="skills-hint">
-                Hover the labels to explore
+                Hover the mini radar labels to explore
             </p>
             <div className="skills-section">
 

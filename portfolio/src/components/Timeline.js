@@ -12,11 +12,11 @@ const experience = [
       impact:
         "Improved test automation coverage and reduced manual QA effort across web platforms",
         bullets: [
-            "Developed and maintained end-to-end tests using Cypress / Playwright",
+            "Developed and maintained end-to-end tests using Playwright",
             "Reduced flaky tests and improved CI reliability",
             "Collaborated with developers to ensure testable and stable releases",
         ],
-        tech: ["Cypress", "Playwright", "JavaScript", "CI/CD"],
+        tech: ["LambdaTest", "Playwright", "JavaScript", "CI/CD"],
     },
     {
         role: "Software Engineer (Release/Test)",
@@ -44,7 +44,7 @@ const experience = [
             "Supported deployment and monitoring processes",
             "Worked with engineering teams on system stability",
         ],
-        tech: ["DevOps", "CI/CD", "Cloud"],
+        tech: ["DevOps", "CI/CD", "Cloud", "Snaplogic"],
     },
     {
         role: "Intern",
@@ -57,7 +57,7 @@ const experience = [
             "Assisted in building and testing internal tools",
             "Collaborated with engineers on feature development",
         ],
-        tech: ["Engineering", "Support"],
+        tech: ["Engineering", "Support", "React"],
     },
 ];
 

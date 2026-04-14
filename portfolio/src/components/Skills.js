@@ -8,7 +8,8 @@ import {
     FaMobileAlt, FaNodeJs
 } from "react-icons/fa";
 import { DiGoogleCloudPlatform } from "react-icons/di";
-import { SiCplusplus, SiVercel, SiDjango, SiPostman, SiGithubcopilot, SiMysql  } from "react-icons/si";
+import { SiCplusplus, SiVercel, SiDjango, SiPostman, 
+        SiGithubcopilot, SiMysql, SiJira  } from "react-icons/si";
 import { BsFiletypeScss } from "react-icons/bs";
 import { VscVscode } from "react-icons/vsc";
 
@@ -85,6 +86,8 @@ function Skills({ activeCategory }) {
                     </span>
                     <span className={getClass('fundamentals')}><VscVscode /> VS Code</span>
                     <span className={getClass('fundamentals')}><SiGithubcopilot /> Copilot</span>
+                    <span className={getClass('fundamentals')}><SiJira /> Jira</span>
+
                 </div>
             </div>
             <div className="skills-group">

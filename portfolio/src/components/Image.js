@@ -61,7 +61,7 @@ function Image ({ label, icon: Icon, link, type })
     return (
 <div className="image-container">
   
-<div className="svg-bg" ref={blobRef}>
+{/* <div className="svg-bg" ref={blobRef}>
   <svg viewBox="0 0 600 600">
     <path
       d="M421,337Q389,424,301,447Q213,470,153,395Q93,320,121,229Q149,138,244,120Q339,102,403,171Q467,240,421,337Z"
@@ -69,7 +69,7 @@ function Image ({ label, icon: Icon, link, type })
       opacity="0.35"
     />
   </svg>
-</div>
+</div> */}
 
   <img
     src={images[index]}

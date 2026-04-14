@@ -55,7 +55,7 @@ function App() {
       <IntroCard />
       </div>
 
-      <div id="skills">
+      <div id="skills" className="section">
       <Stack />
       </div>
 
