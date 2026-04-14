@@ -1,5 +1,5 @@
 import '../styling/App.scss';
-import dedny from '../dither_no_background.png'
+import dedny from '../dither_no_background_2.png'
 import dedny1 from '../memoji1.png'
 import dedny2 from '../memoji2.png'
 import dedny3 from '../memoji3.png'

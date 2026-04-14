@@ -31,6 +31,38 @@ function IntroCard() {
 
         return () => clearInterval(interval);
     }, []);
+
+    useEffect(() => {
+        const tags = document.querySelectorAll(".tags .tag-pill");
+      
+        const strength = 18; // lower = stronger movement
+      
+        tags.forEach((el) => {
+          const handleMove = (e) => {
+            const rect = el.getBoundingClientRect();
+      
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+      
+            el.style.transform = `translate(${x / strength}px, ${y / strength}px)`;
+          };
+      
+          const handleLeave = () => {
+            el.style.transform = "translate(0, 0)";
+          };
+      
+          el.addEventListener("mousemove", handleMove);
+          el.addEventListener("mouseleave", handleLeave);
+        });
+      
+        // cleanup
+        return () => {
+          const tags = document.querySelectorAll(".tags .tag-pill");
+          tags.forEach((el) => {
+            el.replaceWith(el.cloneNode(true));
+          });
+        };
+      }, []);
     return (
         <div className="grid-container">
 
@@ -46,11 +78,11 @@ function IntroCard() {
                         </h2>
 
                         <div class="tags">
-                            <span>Software Engineer</span>
-                            <span>Full Stack</span>
-                            <span>Automation</span>
-                            <span>Testing</span>
-                            <span>Design</span>
+                            <span className="tag-pill">Software Engineer</span>
+                            <span className="tag-pill">Full Stack</span>
+                            <span className="tag-pill">Automation</span>
+                            <span className="tag-pill">Testing</span>
+                            <span className="tag-pill">Design</span>
                             {/* <span>Jenkins</span> */}
                         </div>
 
@@ -71,7 +103,7 @@ function IntroCard() {
                             <span>🎵 Music</span>
                             <span>🌄 Nature</span>
                         </div>
-                        <WebsiteCarbonBadge dark={true} url="www.destinyrogers.dev" />
+                        <WebsiteCarbonBadge dark={true} url="www.destinyrogers.dev/" />
                         <motion.a
   href="/resume.pdf"
   target="_blank"
