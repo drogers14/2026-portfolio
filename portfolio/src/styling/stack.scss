@@ -3,20 +3,42 @@
 // }
   
   .skill {
-    display: inline-flex;
+  //   display: inline-flex;
+  // align-items: center;
+  // gap: 6px;
+
+  // transition: transform 0.2s ease;
+  // will-change: transform;
+  // transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  display: inline-flex;
   align-items: center;
   gap: 6px;
 
-  transition: transform 0.2s ease;
-  will-change: transform;
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 6px 12px;
+  border-radius: 999px;
 
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  // color: rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change: transform;
   }
-  body {
-    background: yellow !important;
-  }
+ 
   .skill:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.03);
+
+    border-color: rgba(0, 198, 255, 0.4);
+  
+    background: rgba(0, 198, 255, 0.08);
+  
+    box-shadow: 0 8px 20px rgba(0, 198, 255, 0.15);
   }
   .skills-section {
     position: relative;
@@ -31,11 +53,62 @@
   .radar-bg {
     position: relative;
     width: 100%;
-    height: 400px;
+  height: 100%;
   
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+  /* soft radial glow */
+  .radar-bg.glow::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+  
+    background: radial-gradient(
+      circle,
+      rgba(100, 200, 255, 0.25) 0%,
+      rgba(100, 200, 255, 0.12) 40%,
+      transparent 70%
+    );
+  
+    filter: blur(20px);
+    z-index: 0;
+  
+    animation: radarGlow 2.5s ease-out forwards;
+  }
+  
+  /* keep chart above glow */
+  .radar-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+  .radar-wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  
+    margin: 0 auto; /* centers it horizontally */
+  }
+
+  @keyframes radarGlow {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  }
   .skills-content {
     position: relative;
     z-index: 2;
@@ -166,3 +239,105 @@
     font-size: 16px;
     opacity: 0.9;
   }
+
+  .radar-labels {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    width: 100%;
+    height: 100%;
+  }
+  
+  .radar-label {
+    position: absolute;
+    pointer-events: auto;
+  
+    font-size: 12px;
+    opacity: 0.6;
+    cursor: pointer;
+  
+    transition: all 0.25s ease;
+  }
+  
+  .radar-label:hover {
+    opacity: 1;
+    color: var(--fa-blue-1);
+    transform: scale(1.1);
+  }
+
+ /* TOP */
+.radar-label.frontend {
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* TOP RIGHT */
+.radar-label.backend {
+  top: 60px;
+  right: 0px;
+  transform: translate(50%, -50%);
+}
+
+/* RIGHT BOTTOM */
+.radar-label.testing {
+  bottom: 60px;
+  right: 0px;
+  transform: translate(50%, 50%);
+}
+
+/* BOTTOM */
+.radar-label.fundamentals {
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/* BOTTOM LEFT */
+.radar-label.devops {
+  bottom: 60px;
+  left: 0px;
+  transform: translate(-50%, 50%);
+}
+
+/* TOP LEFT */
+.radar-label.ai {
+  top: 60px;
+  left: 0px;
+  transform: translate(-50%, -50%);
+}
+
+// .skills-section:hover .skill {
+//   opacity: 0.3;
+// }
+
+.skill.active {
+  opacity: 1 !important;
+  transform: scale(1.08);
+
+  background: rgba(0, 198, 255, 0.15);
+  border-color: rgba(0, 198, 255, 0.4);
+
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.25);
+}
+
+.skills-hint {
+  font-size: 13px;
+  opacity: 0.5;
+  margin-top: -10px;
+  margin-bottom: 20px;
+
+  text-align: center;
+  letter-spacing: 0.03em;
+
+    animation: fadePulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes fadePulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+  }
+
+  
