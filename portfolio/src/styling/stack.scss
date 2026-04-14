@@ -1,4 +1,7 @@
-
+// html {
+//   outline: 5px solid red !important;
+// }
+  
   .skill {
     display: inline-flex;
   align-items: center;
@@ -9,34 +12,35 @@
   transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 
   }
+  body {
+    background: yellow !important;
+  }
   .skill:hover {
     transform: scale(1.05);
   }
   .skills-section {
-    margin-top: 60px;
     position: relative;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  
+    min-height: 500px;
+    gap: 40px;
   }
+  
+  .radar-bg {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  
+    z-index: 1;
+  }
+  
   .skills-content {
     position: relative;
-  z-index: 2;
+    z-index: 2;
   }
-  .radar-bg {
-    position: absolute;
-    top: 50%;
-    left: 65%;
-    transform: translate(-50%, -50%);
   
-    width: 500px;
-    height: 500px;
-  
-    opacity: 1;        /* 🔥 IMPORTANT */
-    filter: none;      /* 🔥 IMPORTANT */
-  
-    z-index: 0;
-    pointer-events: none;
-    mix-blend-mode: screen;
-  }
   .section-title {
     font-size: 2rem;
     font-weight: 700;

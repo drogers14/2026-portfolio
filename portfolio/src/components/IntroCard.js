@@ -34,35 +34,35 @@ function IntroCard() {
 
     useEffect(() => {
         const tags = document.querySelectorAll(".tags .tag-pill");
-      
+
         const strength = 18; // lower = stronger movement
-      
+
         tags.forEach((el) => {
-          const handleMove = (e) => {
-            const rect = el.getBoundingClientRect();
-      
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-      
-            el.style.transform = `translate(${x / strength}px, ${y / strength}px)`;
-          };
-      
-          const handleLeave = () => {
-            el.style.transform = "translate(0, 0)";
-          };
-      
-          el.addEventListener("mousemove", handleMove);
-          el.addEventListener("mouseleave", handleLeave);
+            const handleMove = (e) => {
+                const rect = el.getBoundingClientRect();
+
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                el.style.transform = `translate(${x / strength}px, ${y / strength}px)`;
+            };
+
+            const handleLeave = () => {
+                el.style.transform = "translate(0, 0)";
+            };
+
+            el.addEventListener("mousemove", handleMove);
+            el.addEventListener("mouseleave", handleLeave);
         });
-      
+
         // cleanup
         return () => {
-          const tags = document.querySelectorAll(".tags .tag-pill");
-          tags.forEach((el) => {
-            el.replaceWith(el.cloneNode(true));
-          });
+            const tags = document.querySelectorAll(".tags .tag-pill");
+            tags.forEach((el) => {
+                el.replaceWith(el.cloneNode(true));
+            });
         };
-      }, []);
+    }, []);
     return (
         <div className="grid-container">
 
@@ -105,16 +105,16 @@ function IntroCard() {
                         </div>
                         <WebsiteCarbonBadge dark={true} url="www.destinyrogers.dev/" />
                         <motion.a
-  href="/resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="resume-btn"
-  whileHover={{ scale: 1.08, y: -2 }}
-  whileTap={{ scale: 0.95 }}
->
-<MdDownload />
-<span>Resume</span>
-</motion.a>
+                            href="/resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="resume-btn"
+                            whileHover={{ scale: 1.08, y: -2 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <MdDownload />
+                            <span>Resume</span>
+                        </motion.a>
                     </div>
 
                     {/* <div className="card-shadow"></div> */}

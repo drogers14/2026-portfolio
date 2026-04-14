@@ -15,37 +15,20 @@ const skills = [
 ];
 
 function Stack() {
-    const [showRadar, setShowRadar] = useState(true);
     return (
         <div className="">
             <h2>Technical Skills</h2>
 
 
             <div className="skills-section">
-  
+
   <div className="radar-bg">
     <RadarChart
       height={400}
       series={[{ data: [100, 98, 65, 70, 85, 95] }]}
-      sx={{
-        opacity: 0.8,
-        "& .MuiChartsRadarArea": {
-          fill: "rgba(16, 185, 129, 0.2)",
-        },
-        "& .MuiChartsRadarLine": {
-          stroke: "#3B82F6",
-        }
-      }}
       radar={{
         max: 100,
-        metrics: [
-          'Frontend',
-          'Testing',
-          'Backend',
-          'AI/ML',
-          'CI/CD',
-          'Debugging and Root cause analysis'
-        ],
+        metrics: ['Frontend','Testing','Backend','AI/ML','CI/CD','Debugging'],
       }}
     />
   </div>
@@ -55,8 +38,7 @@ function Stack() {
   </div>
 
 </div>
-        </div>
-
+</div>
     );
 }
 

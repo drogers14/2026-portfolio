@@ -58,7 +58,7 @@ body {
 .App {
   text-align: left;
   height: 100vh;
-  padding-top: 80px; /* match your nav height */
+  padding-top: 120px; /* match your nav height */
   background: linear-gradient(180deg, #dff6ff, #ffffff);
   min-height: 100vh;
   padding: 0 clamp(16px, 4vw, 64px);
@@ -88,14 +88,14 @@ body {
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+  transform: translateY(24px) scale(0.98);
+  transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
 }
 
 .reveal.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 .App-logo {
   height: 40vmin;
@@ -107,7 +107,44 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: white;
+
+  overflow: hidden;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.banner-track {
+  display: flex;
+  gap: 24px;
+  white-space: nowrap;
+
+  animation: scrollBanner 18s linear infinite;
+}
+
+.top-banner:hover .banner-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollBanner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 @keyframes App-logo-spin {
   from {

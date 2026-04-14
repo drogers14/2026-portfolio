@@ -18,11 +18,13 @@ function useScrollReveal(selector = ".reveal") {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
+            observer.unobserve(entry.target); // ✅ important optimization
           }
         });
       },
       {
-        threshold: 0.15, // triggers when 15% visible
+        threshold: 0.15,
+        rootMargin: "0px 0px -10% 0px", // 🔥 makes animation feel earlier
       }
     );
 
@@ -37,6 +39,17 @@ function App() {
 
   return (
     <div className="App">
+      {/* <div className="top-banner">
+  <div className="banner-track">
+    <span>🚀 Attending SF Climate Week events</span>
+    <span>•</span>
+    <span>🚀 Attending SF Climate Week events</span>
+    <span>•</span>
+    <span>🚀 Attending SF Climate Week events</span>
+    <span>•</span>
+    <span>🚀 Attending SF Climate Week events</span>
+  </div>
+</div> */}
       <Navbar />
       <div id="home">
       <IntroCard />
