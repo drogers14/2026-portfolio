@@ -22,6 +22,7 @@ function IntroCard() {
                 now.toLocaleTimeString([], {
                     hour: "2-digit",
                     minute: "2-digit",
+                    second: "2-digit",
                 })
             );
         };
@@ -77,13 +78,21 @@ function IntroCard() {
                         <h2 class="subtitle">I'm Destiny Rogers
                         </h2>
 
+                        <div className="values-strip">
+                            <span>Engineering</span>
+                            <span className="dot">•</span>
+                            <span>Sustainability</span>
+                            <span className="dot">•</span>
+                            <span>Creativity</span>
+                        </div>
+
                         <div class="tags">
                             <span className="tag-pill">Software Engineer</span>
                             <span className="tag-pill">Full Stack</span>
                             <span className="tag-pill">Automation</span>
                             <span className="tag-pill">Testing</span>
                             <span className="tag-pill">Design</span>
-                            {/* <span>Jenkins</span> */}
+                            { }
                         </div>
 
                         <p className="description">
@@ -96,14 +105,7 @@ function IntroCard() {
                             <span className="time">{time} PST</span>
                         </p>
 
-                        <div className="interests-row">
-                            <span>🌱 Sustainability</span>
-                            <span>🎬 Film</span>
-                            <span>📸 Photography</span>
-                            <span>🎵 Music</span>
-                            <span>🌄 Nature</span>
-                        </div>
-                        <WebsiteCarbonBadge dark={true} url="www.destinyrogers.dev/" />
+                   
                         <motion.a
                             href="/resume.pdf"
                             target="_blank"
@@ -115,18 +117,33 @@ function IntroCard() {
                             <MdDownload />
                             <span>Resume</span>
                         </motion.a>
+                        <div className="interests-row">
+                            <span>🌱 Sustainability</span>
+                            <span>🎬 Film</span>
+                            <span>📸 Photography</span>
+                            <span>🎵 Music</span>
+                            <span>🌄 Nature</span>
+                        </div>
+                        <div className="sustainability-section">
+                        <p className="mini-label">Sustainability impact</p>
+
+  <WebsiteCarbonBadge dark={true} url="www.destinyrogers.dev" />
+</div>
                     </div>
 
                     {/* <div className="card-shadow"></div> */}
-                    <div className="social-row">
+          
+                </div>
+            </div>
+            <div className="right">
+            <Image />
+
+                <div className="social-row-right">
                         <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link={"https://www.linkedin.com/in/destiny-rogers/"} />
                         <Social label="GitHub" icon={FaGithub} type="github" link={"https://github.com/drogers14"} />
                         <Social label="Email" icon={MdEmail} type="email" />
                     </div>
-                </div>
-            </div>
-            <div className="right">
-                <Image />
+
             </div>
 
         </div>

@@ -72,18 +72,83 @@ body {
   //  ), /* Solid color overlay */
   // url('./texture-01.jpg');
 }
+.values-strip {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  opacity: 0.65;
+  margin: 6px 0 18px 0;
+}
+
+.values-strip span {
+  transition: all 0.25s ease;
+}
+
+.values-strip span:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.values-strip .dot {
+  opacity: 0.3;
+  transform: none;
+}
+.sustainability-section {
+  margin-top: 12px;
+
+  display: flex;
+  justify-content: flex-start;
+
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.sustainability-section:hover {
+  opacity: 1;
+}
+.mini-label {
+  font-size: 11px;
+  opacity: 0.5;
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center; // 🔥 vertical centering
-  min-height: 100vh;
+  align-items: center;
+  gap: 40px;
 }
 
 .right {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 0; /* 🔥 prevents overflow pushing */
+}
+
+.social-row-right {
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  gap: 0; /* 🔥 remove spacing control */
+  padding: 0;
+  border-radius: 999px;
+margin-left: -50px;
+  background: rgba(255, 255, 255, 0.06);
+  // backdrop-filter: blur(10px);
+  // border: 2px solid green;
+
 }
 
 .reveal {
@@ -174,48 +239,45 @@ body {
   transform: scale(1.06);
 }
 .social-row {
-  // display: flex;
-  // flex-direction: row;
-  // align-items: flex-start;
-  // padding: 0px;
-  // margin: -90px;
-  // z-index: 10; 
-  // // background: var(--fa-glass);
-  // // backdrop-filter: blur(10px);
-
-  // border: 1px solid var(--fa-border);
-  // // gap: clamp(12px, 2vw, 32px);
-  flex-wrap: nowrap;
-  // border: 2px solid red;
   display: flex;
-  gap: clamp(10px, 2vw, 20px);
   align-items: center;
   justify-content: flex-start;
-  // flex-wrap: wrap;
-  margin-top: -100px;
-  z-index: 2;
+
+  gap: 4px; /* 🔥 tighter */
+
+  padding: 4px;
+  margin-top: 10px;
+
+  width: fit-content;  /* 🔥 prevents stretching */
 }
 .social-row a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px;
-  margin: 0px;
-  border-radius: 8px;
-  color: var(--fa-black, #222);
-  text-decoration: none;  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+  margin: 0;
+
+  flex: 0 0 auto; /* 🔥 prevents flex growth */
+
+  border-radius: 6px;
+
+  transition: all 0.2s ease;
 }
 .social-row a:visited {
   color: var(--fa-black, #222); /* keeps it identical */
 }
 .social-row svg {
-  font-size: clamp(20px, 2vw, 30px); 
+  font-size: 18px; /* smaller = tighter visual cluster */
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* hover effect */
 .social-row svg:hover {
-  transform: translateY(-3px) scale(1.05);
+  transform: scale(1.05); /* no vertical movement */
   opacity: 0.85;
 }
 
@@ -229,8 +291,8 @@ body {
 
 .blob-wrapper {
   position: relative;
-  width: min(35vw, 450px);
-  height: min(35vw, 450px);
+  width: min(320px, 100%);
+  height: auto;
   animation: float 6s ease-in-out infinite;
 
   display: flex;
@@ -271,24 +333,32 @@ border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
     0 0 60px var(--fa-glow),
     inset 0 6px 16px rgba(255,255,255,0.7);
 }
-/* avatar sits above */
+.right img,
 .avatar {
-  width: 80%;
-  height: 80%;
+  max-width: 100%;
+  height: auto;
+
+  width: min(320px, 100%);
   object-fit: cover;
-  border-radius: 50%;
-  // position: relative;
-  z-index: 1;
-  // width: 75%;
-  // height: 75%;
-  // border-radius: 50%;
-  // object-fit: cover;
-
-  // border: 3px solid rgba(255,255,255,0.6);
-
-  box-shadow:
-    0 0 20px rgba(0, 198, 255, 0.4);
 }
+/* avatar sits above */
+// .avatar {
+//   width: 80%;
+//   height: 80%;
+//   object-fit: cover;
+//   border-radius: 50%;
+//   // position: relative;
+//   z-index: 1;
+//   // width: 75%;
+//   // height: 75%;
+//   // border-radius: 50%;
+//   // object-fit: cover;
+
+//   // border: 3px solid rgba(255,255,255,0.6);
+
+//   box-shadow:
+//     0 0 20px rgba(0, 198, 255, 0.4);
+// }
 
 /* 💫 idle breathing animation */
 @keyframes blobPulse {
