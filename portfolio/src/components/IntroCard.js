@@ -72,22 +72,23 @@ function IntroCard() {
 
                     <div class="card">
                         <div className="open-to-work-badge">
-                            <TbUserCode /> Open to Work · Software Engineer bridging Frontend Development & QA Automation
+                            <TbUserCode /> Open to Work · Software Engineer | QA Automation
                         </div>
                         <h1 class="title">Hi <span class="wave">👋</span> </h1>
                         <h2 class="subtitle">I'm Destiny Rogers
                         </h2>
 
                         <div className="values-strip">
-                            <span>Engineering</span>
+                            <span>Software Engineer bridging frontend development and QA automation to build reliable, user-focused web systems.</span>
+                            {/* <span>Engineering</span>
                             <span className="dot">•</span>
                             <span>Sustainability</span>
                             <span className="dot">•</span>
-                            <span>Creativity</span>
+                            <span>Creativity</span> */}
                         </div>
 
                         <div class="tags">
-                            <span className="tag-pill">Software Engineer</span>
+                            <span className="tag-pill primary">Software Engineer</span>
                             <span className="tag-pill">Full Stack</span>
                             <span className="tag-pill">Automation</span>
                             <span className="tag-pill">Testing</span>
@@ -96,10 +97,13 @@ function IntroCard() {
                         </div>
 
                         <p className="description">
-                            ✳ Software Engineer who is curious and always exploring new ideas. I’m passionate about building reliable,
+                            I focus on building reliable and maintainable web applications, with experience across frontend development, test automation, and release engineering.
+  <br /><br />
+  I care about clean systems, thoughtful user experience, and building software that stays stable as it scales. Outside of engineering, I explore filmmaking, photography, and creative work inspired by everyday life and sustainability.
+</p>
+                            {/* ✳ Software Engineer who is curious and always exploring new ideas. I’m passionate about building reliable,
                             consistent software with a focus on sustainability both in technology and in life. Outside of engineering,
-                            I enjoy filmmaking, photography, music, and exploring nature.
-                        </p>
+                            I enjoy filmmaking, photography, music, and exploring nature. */}
                         <p className="description meta">
                             <MdOutlineLocationOn /> San Francisco, CA
                             <span className="time">{time} PST</span>
