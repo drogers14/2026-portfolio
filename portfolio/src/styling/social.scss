@@ -1,97 +1,158 @@
+.social-link {
+  position: relative;
+  width: 44px;
+  height: 44px;
 
-.icon {
-  position: absolute;
-  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  }
-  .social-icon {
-    font-size: clamp(18px, 2vw, 30px);
-  }
-  
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-  
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
 
-  .brand {
-
-    position: relative;
-    width: clamp(90px, 18vw, 300px);
-  height: clamp(90px, 18vw, 300px);
-  flex: 0 0 auto;
-
-//   border: 2px solid red;
-
-	img {
-		display: block;
-		border-radius: 50%;
-		width: 100%;
-	}
-
-	.brand-label {
-        position: absolute;
-        inset: 0; /* fills container */
-		transition: all 0.2s ease-in-out;
-  
-		svg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-			pointer-events: none;
-
-			// animation-name: rotate;
-			// animation-duration: 15s;
-			// animation-iteration-count: infinite;
-			// animation-timing-function: linear;
-			// animation-play-state: paused;
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-          
-            animation: rotate 15s linear infinite;
-            animation-play-state: paused;
-			text {
-				font-family: "Inter", sans-serif;
-        font-size: 10px;
-				letter-spacing: 1.375px;
-				font-variation-settings: "wght" 650;
-				// fill: #434dad;
-				text-transform: uppercase;
-			}
-		}
-	}
-
-	&:hover {
-		.brand-label svg {
-            opacity: 1;
-            transform: scale(1);
-            animation-play-state: running;
-            
-		}
-       text {
-            fill: var(--hover-color);
-          }
-	}
-   
+  overflow: visible;
 }
 
+/* icon always centered */
+.icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* hidden by default */
+.brand-label {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+
+  pointer-events: none;
+}
+
+/* svg ring */
+.brand-label svg {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+
+  top: -48px;
+  left: -48px;
+
+  animation: rotate 10s linear infinite;
+  animation-play-state: paused;
+}
+
+/* hover trigger */
+.social-link:hover .brand-label {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.social-link:hover .brand-label svg {
+  animation-play-state: running;
+}
+
+/* rotation */
 @keyframes rotate {
-	from {
-		transform: rotate(360deg);
-	}
-	to {
-		transform: rotate(0);
-	}
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
+// .icon {
+//   position: absolute;
+//   inset: 0;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   }
+//   .social-icon {
+//     font-size: clamp(18px, 2vw, 30px);
+//   }
+  
+//   @keyframes rotate {
+//     0% {
+//       transform: rotate(0deg);
+//     }
+  
+//     100% {
+//       transform: rotate(360deg);
+//     }
+//   }
+
+//   .brand {
+
+//     position: relative;
+//     width: clamp(90px, 18vw, 300px);
+//   height: clamp(90px, 18vw, 300px);
+//   flex: 0 0 auto;
+
+// //   border: 2px solid red;
+
+// 	img {
+// 		// display: block;
+// 		border-radius: 50%;
+// 		// width: 100%;
+// 	}
+
+// 	.brand-label {
+//         position: absolute;
+//         inset: 0; /* fills container */
+// 		transition: all 0.2s ease-in-out;
+  
+// 		svg {
+//             position: absolute;
+//             inset: 0;
+//             width: 100%;
+//             height: 100%;
+// 			pointer-events: none;
+
+// 			// animation-name: rotate;
+// 			// animation-duration: 15s;
+// 			// animation-iteration-count: infinite;
+// 			// animation-timing-function: linear;
+// 			// animation-play-state: paused;
+//             opacity: 0;
+//             transform: scale(0.9);
+//             transition: opacity 0.3s ease, transform 0.3s ease;
+          
+//             animation: rotate 15s linear infinite;
+//             animation-play-state: paused;
+// 			text {
+// 				font-family: "Inter", sans-serif;
+//         font-size: 10px;
+// 				letter-spacing: 1.375px;
+// 				font-variation-settings: "wght" 650;
+// 				// fill: #434dad;
+// 				text-transform: uppercase;
+// 			}
+// 		}
+// 	}
+
+// 	&:hover {
+// 		.brand-label svg {
+//             opacity: 1;
+//             transform: scale(1);
+//             animation-play-state: running;
+            
+// 		}
+//        text {
+//             fill: var(--hover-color);
+//           }
+// 	}
+   
+// }
+
+// @keyframes rotate {
+// 	from {
+// 		transform: rotate(360deg);
+// 	}
+// 	to {
+// 		transform: rotate(0);
+// 	}
+// }
 
 
 

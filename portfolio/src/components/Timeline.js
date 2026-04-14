@@ -5,34 +5,62 @@ import { FaCode, FaBug, FaBriefcase } from "react-icons/fa";
 
 const experience = [
     {
-        role: "Quality Automation Engineer",
-        company: "Estée Lauder Companies via HireTalent",
-        date: "July 2023 - ",
-        description: "Tested websites and automated workflows.",
-        type: "qa",
+      role: "Quality Automation Engineer",
+      company: "Estée Lauder Companies via HireTalent",
+      date: "July 2023 – Present",
+      type: "qa",
+      impact:
+        "Improved test automation coverage and reduced manual QA effort across web platforms",
+        bullets: [
+            "Developed and maintained end-to-end tests using Cypress / Playwright",
+            "Reduced flaky tests and improved CI reliability",
+            "Collaborated with developers to ensure testable and stable releases",
+        ],
+        tech: ["Cypress", "Playwright", "JavaScript", "CI/CD"],
     },
     {
         role: "Software Engineer (Release/Test)",
         company: "Twitter, Inc.",
         date: "May 2021 – January 2023",
-        description: "Tested web apps and automated workflows.",
         type: "qa",
+        impact:
+            "Enhanced release quality by building automation workflows and improving testing processes",
+        bullets: [
+            "Built automated testing workflows for web applications",
+            "Identified and resolved issues before production releases",
+            "Worked cross-functionally to improve deployment reliability",
+        ],
+        tech: ["Automation", "Testing", "Web Apps"],
     },
     {
         role: "Software Engineer (DevOps / Intern)",
         company: "Hewlett Packard Enterprise",
         date: "May 2020 – April 2021",
-        description: "Tested web apps and automated workflows.",
         type: "dev",
+        impact:
+            "Supported infrastructure and development workflows to improve system reliability",
+        bullets: [
+            "Assisted in DevOps pipeline improvements",
+            "Supported deployment and monitoring processes",
+            "Worked with engineering teams on system stability",
+        ],
+        tech: ["DevOps", "CI/CD", "Cloud"],
     },
     {
         role: "Intern",
         company: "Hewlett Packard Enterprise",
         date: "May 2020 – Jan 2021",
-        description: "Supported engineering team with feature development.",
         type: "intern",
+        impact:
+            "Contributed to engineering efforts through feature support and development tasks",
+        bullets: [
+            "Assisted in building and testing internal tools",
+            "Collaborated with engineers on feature development",
+        ],
+        tech: ["Engineering", "Support"],
     },
 ];
+
 function getIcon(type) {
     switch (type) {
         case "dev":
@@ -83,7 +111,17 @@ export default function Timeline() {
                                 {item.role} <span>@ {item.company}</span>
                             </h3>
                             <p className="timeline-date">{item.date}</p>
-                            <p className="timeline-desc">{item.description}</p>
+                            <p className="timeline-impact">⭐ {item.impact}</p>
+
+                            <ul className="timeline-bullets">
+                                {item.bullets.map((b, idx) => (
+                                    <li key={idx}>{b}</li>
+                                ))}
+                            </ul>
+
+                            <div className="timeline-tech">
+                                {item.tech.join(" • ")}
+                            </div>
                         </div>
                     </motion.div>
                 ))}

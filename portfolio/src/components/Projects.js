@@ -2,6 +2,8 @@ import '../styling/App.scss'
 function Projects() {
     return (
         <>
+        <h1>Projects</h1>
+        <h2>Ideas Brought to Life</h2>
         <h1 className="title-hero">🚧 Coming Soon! 🚧</h1>
             {/* <h1 className="title-hero">DESTINY ROGERS</h1>
 

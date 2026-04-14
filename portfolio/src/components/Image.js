@@ -8,22 +8,22 @@ import dedny5 from '../memoji5.png'
 
 import { useRef, useEffect, useState } from 'react';
 
-function useBlobFollow() {
+function useMagneticBackground() {
     const ref = useRef(null);
   
     useEffect(() => {
       const el = ref.current;
       if (!el) return;
   
-      const handleMouseMove = (e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 30;
-        const y = (e.clientY / window.innerHeight - 0.5) * 30;
+      const handleMove = (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
   
         el.style.transform = `translate(${x}px, ${y}px)`;
       };
   
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mousemove", handleMove);
+      return () => window.removeEventListener("mousemove", handleMove);
     }, []);
   
     return ref;
@@ -33,7 +33,7 @@ function useBlobFollow() {
 
 function Image ({ label, icon: Icon, link, type })
 {    
-    const blobRef = useBlobFollow();
+    const blobRef = useMagneticBackground();
     const images = [
         dedny,
         dedny1, 
@@ -59,22 +59,42 @@ function Image ({ label, icon: Icon, link, type })
         setIndex(0); // reset (remove if you want to keep last frame)
     };
     return (
+<div className="image-container">
+  
+<div className="svg-bg" ref={blobRef}>
+  <svg viewBox="0 0 600 600">
+    <path
+      d="M421,337Q389,424,301,447Q213,470,153,395Q93,320,121,229Q149,138,244,120Q339,102,403,171Q467,240,421,337Z"
+      fill="#00c6ff"
+      opacity="0.35"
+    />
+  </svg>
+</div>
 
-        <div style={{marginTop:"40%"}}>
-            <div className="blob-wrapper">
-                <div className="blob" ref={blobRef}></div>
+  <img
+    src={images[index]}
+    alt="portrait"
+    className="avatar"
+    onMouseEnter={startCycle}
+    onMouseLeave={stopCycle}
+  />
+</div>
 
-                <img
-                    src={images[index]}
-                    alt="dedny" 
-                    // width="100%" 
-                    // height="100%" 
-                    className="avatar"
-                    onMouseEnter={startCycle}
-                    onMouseLeave={stopCycle} />
-            </div>
+        // <div style={{marginTop:"40%"}}>
+        //     <div className="blob-wrapper">
+        //         <div className="blob" ref={blobRef}></div>
 
-        </div>
+        //         <img
+        //             src={images[index]}
+        //             alt="dedny" 
+        //             // width="100%" 
+        //             // height="100%" 
+        //             className="avatar"
+        //             onMouseEnter={startCycle}
+        //             onMouseLeave={stopCycle} />
+        //     </div>
+
+        // </div>
 )
 }
 

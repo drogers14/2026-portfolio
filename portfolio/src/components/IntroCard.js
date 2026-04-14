@@ -72,7 +72,7 @@ function IntroCard() {
 
                     <div class="card">
                         <div className="open-to-work-badge">
-                            <TbUserCode /> Open to Work · Software Engineering / QA / Frontend Roles
+                            <TbUserCode /> Open to Work · Software Engineer bridging Frontend Development & QA Automation
                         </div>
                         <h1 class="title">Hi <span class="wave">👋</span> </h1>
                         <h2 class="subtitle">I'm Destiny Rogers
@@ -105,7 +105,7 @@ function IntroCard() {
                             <span className="time">{time} PST</span>
                         </p>
 
-                   
+
                         <motion.a
                             href="/resume.pdf"
                             target="_blank"
@@ -117,32 +117,34 @@ function IntroCard() {
                             <MdDownload />
                             <span>Resume</span>
                         </motion.a>
-                        <div className="interests-row">
+                        {/* <div className="interests-row">
                             <span>🌱 Sustainability</span>
                             <span>🎬 Film</span>
                             <span>📸 Photography</span>
                             <span>🎵 Music</span>
                             <span>🌄 Nature</span>
-                        </div>
+                        </div> */}
                         <div className="sustainability-section">
-                        <p className="mini-label">Sustainability impact</p>
+                            <p className="mini-label">Sustainability impact</p>
 
-  <WebsiteCarbonBadge dark={true} url="www.destinyrogers.dev" />
-</div>
+                            <WebsiteCarbonBadge dark={false} url="www.destinyrogers.dev" />
+                        </div>
                     </div>
 
                     {/* <div className="card-shadow"></div> */}
-          
+
                 </div>
             </div>
             <div className="right">
-            <Image />
-
+                <div className="image-wrapper">
+                    <Image />
+                </div>
+                <p className="mini-label">Connect with me</p>
                 <div className="social-row-right">
-                        <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link={"https://www.linkedin.com/in/destiny-rogers/"} />
-                        <Social label="GitHub" icon={FaGithub} type="github" link={"https://github.com/drogers14"} />
-                        <Social label="Email" icon={MdEmail} type="email" />
-                    </div>
+                    <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link={"https://www.linkedin.com/in/destiny-rogers/"} />
+                    <Social label="GitHub" icon={FaGithub} type="github" link={"https://github.com/drogers14"} />
+                    <Social label="Email" icon={MdEmail} type="email" link={"destinyrogers725@gmail.com"}/>
+                </div>
 
             </div>
 

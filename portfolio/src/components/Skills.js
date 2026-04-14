@@ -8,7 +8,7 @@ import {
     FaMobileAlt, FaNodeJs
 } from "react-icons/fa";
 import { DiGoogleCloudPlatform } from "react-icons/di";
-import { SiCplusplus, SiVercel, SiDjango, SiPostman, SiGithubcopilot } from "react-icons/si";
+import { SiCplusplus, SiVercel, SiDjango, SiPostman, SiGithubcopilot, SiMysql  } from "react-icons/si";
 import { BsFiletypeScss } from "react-icons/bs";
 import { VscVscode } from "react-icons/vsc";
 
@@ -124,6 +124,7 @@ function Skills({ activeCategory }) {
                 <h3>Backend</h3>
                 <div className="skills-cloud">
                     <span className="skill muted"><FaNodeJs />Node.js</span>
+                    <span className="skill muted"><SiMysql /> MySQL</span>
                     <span className="skill muted">APIs</span>
                     <span className={getClass('backend')}>
                         <SiDjango /> Django
