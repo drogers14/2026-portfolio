@@ -59,13 +59,13 @@ function App() {
       <Stack />
       </div>
 
-      <div id="experience">
+      <div id="experience" className="section">
       <Experience />
       </div>
-      <div id="education">
+      <div id="education" className="section">
       <Education  />
       </div>
-      <div id="projects">
+      <div id="projects" className="section">
       <Projects  />
       </div>
     </div>
