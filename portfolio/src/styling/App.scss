@@ -388,7 +388,7 @@ p {
 
   width: 28px;
   height: 28px;
-
+gap: 14px;
   padding: 0;
   margin: 0;
 
@@ -449,9 +449,10 @@ p {
 .avatar {
   width: 320px;
   height: 320px;
-  object-fit: cover;   /* key line */
-  border-radius: 50%;  /* or 24px if you prefer modern card */
-  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
   // position: relative;
   // z-index: 2;
   // height: auto;
@@ -460,16 +461,96 @@ p {
   // max-width: 340px;
   // object-fit: cover;
 }
-
+.avatar-wrapper {
+  position: relative; /* 🔥 REQUIRED */
+  width: 320px;
+  height: 320px;
+}
 .avatar:hover {
   cursor: grab;
 }
 .avatar-hint {
   font-size: 12px;
-  opacity: 0.5;
+  // opacity: 0.5;
   text-align: center;
   margin-top: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+
+  opacity: 0.9;
+  animation: floatHint 2.5s ease-in-out infinite;
+
 }
+@keyframes floatHint {
+  0%, 100% { transform: translateX(calc(-50% + 30px)) translateY(0); }
+  50% { transform: translateX(calc(-50% + 36px)) translateY(-4px); }
+}
+
+.avatar-arc-hint {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+
+  animation: floatArc 3s ease-in-out infinite;
+}
+
+@keyframes floatArc {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-4px) rotate(2deg);
+  }
+}
+
+.arc-svg {
+  position: absolute;
+
+  width: 440px;
+  height: 440px;
+
+  left: 50%;
+  top: 50%;
+
+  transform-origin: center;
+
+  animation: spin 12s linear infinite;
+  // outline: 1px solid red;
+
+}
+
+
+.arc-svg text {
+  font-size: 14px;  
+  letter-spacing: 1.2px;
+  // fill: rgba(255, 255, 255, 0.7);
+  text-anchor: middle;
+  fill: black;
+}
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// @keyframes spin {
+//   from { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// }
+
+
+
+
+
 
 .tag-pill.primary {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
@@ -720,6 +801,11 @@ background: var(--black);
 
 .image-container {
   position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .svg-bg {

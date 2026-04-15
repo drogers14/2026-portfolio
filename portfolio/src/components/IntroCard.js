@@ -102,7 +102,7 @@ function IntroCard() {
                         </p>
 
 
-                        <motion.a
+                        {/* <motion.a
                             href="/resume.pdf"
                             download
                             target="_blank"
@@ -113,7 +113,7 @@ function IntroCard() {
                         >
                             <MdDownload />
                             <span>Resume</span>
-                        </motion.a>
+                        </motion.a> */}
                         {/* <div className="interests-row">
                             <span>🌱 Sustainability</span>
                             <span>🎬 Film</span>
@@ -143,6 +143,11 @@ function IntroCard() {
                         <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link="https://www.linkedin.com/in/destiny-rogers/" />
                         <Social label="GitHub" icon={FaGithub} type="github" link="https://github.com/drogers14" />
                         <Social label="Email" icon={MdEmail} type="email" link="mailto:destinyrogers725@gmail.com" />
+                        <Social
+  label="Resume"
+  type="resume"
+  link="/resume.pdf"
+/>
                     </div>
 
                     <p className="mini-label">Connect with me</p>

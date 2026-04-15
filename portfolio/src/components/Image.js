@@ -41,15 +41,36 @@ function Image({ label, icon: Icon, link, type }) {
 
     return (
         <>
-            <p className="avatar-hint">Hover me ✨</p>
-            <div className="image-container"
+            <div
+                className="image-container"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
             >
-                <img
-                    src={currentImage} alt="profile"
-                    className="avatar"
-                />
+                <div className="avatar-wrapper">
+  <svg viewBox="0 0 440 440" className="arc-svg">
+    <defs>
+      <path
+        id="arcPath"
+        d="
+        M 220,220
+        m -210,0
+        a 210,210 0 1,1 420,0
+        a 210,210 0 1,1 -420,0"
+      />
+    </defs>
+
+    <text fill="black">
+    <textPath href="#arcPath" startOffset="50%" textAnchor="middle">
+  {hovered
+    ? "✨ okay hi • nice to meet you • ✨ • ✨ okay hi • nice to meet you • ✨"
+    : "👀 try hovering • no pressure • :) • 👀 try hovering • no pressure • :) •"
+  }
+</textPath>
+    </text>
+  </svg>
+
+  <img src={currentImage} alt="profile" className="avatar" />
+</div>
             </div>
         </>
     );
