@@ -9,76 +9,72 @@ import dedny5 from '../memoji5.png'
 
 import { useRef, useEffect, useState } from 'react';
 
-function useMagneticBackground() {
+// function useMagneticBackground() {
 
-    const ref = useRef(null);
+//     const ref = useRef(null);
 
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
+//     useEffect(() => {
+//         const el = ref.current;
+//         if (!el) return;
 
-        const handleMove = (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+//         const handleMove = (e) => {
+//             const x = (e.clientX / window.innerWidth - 0.5) * 20;
+//             const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
-            el.style.transform = `translate(${x}px, ${y}px)`;
-        };
+//             el.style.transform = `translate(${x}px, ${y}px)`;
+//         };
 
-        window.addEventListener("mousemove", handleMove);
-        return () => window.removeEventListener("mousemove", handleMove);
-    }, []);
+//         window.addEventListener("mousemove", handleMove);
+//         return () => window.removeEventListener("mousemove", handleMove);
+//     }, []);
 
-    return ref;
-}
+//     return ref;
+// }
 
 
 
 function Image({ label, icon: Icon, link, type }) {
-    const [hovered, setHovered] = useState(false);
-    useEffect(() => {
-        const speed = hovered ? 180 : 1400;
-
-        const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % images.length);
-        }, speed);
-
-        return () => clearInterval(interval);
-    }, [hovered]);
-
-    const blobRef = useMagneticBackground();
     const images = [
-        dedny,
+        // dedny,
         dedny1,
         dedny2,
         dedny3,
         dedny4,
         dedny5
     ];
+    const hoverImage = dedny; // your special image
+
     const [index, setIndex] = useState(0);
-    const intervalRef = useRef(null);
+    const [hovered, setHovered] = useState(false);
 
-    const startCycle = () => {
-        if (intervalRef.current) return;
+    
+    useEffect(() => {
+        if (hovered) return; // ⛔ stop cycling on hover
 
-        intervalRef.current = setInterval(() => {
+        const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length);
-        }, 400);
-    };
+        }, 1400);
 
-    const stopCycle = () => {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-        setIndex(0); // reset (remove if you want to keep last frame)
-    };
+        return () => clearInterval(interval);
+    }, [hovered, images.length]);
+    const currentImage = hovered
+    ? hoverImage
+    : images[index];
+
+
     return (
         <>
             <p className="avatar-hint">Hover me ✨</p>
-            <div className="image-container">
+            <div className="image-container"
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                >
                 <img
-                    src={images[index]}
+                    src={currentImage} alt="profile"
+                    // src={images[index]}
                     className="avatar"
-                    onMouseEnter={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
+                // onMouseEnter={() => setHovered(true)}
+                // onMouseLeave={() => setHovered(false)}
                 />
             </div>
         </>

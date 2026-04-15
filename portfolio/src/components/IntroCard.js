@@ -79,31 +79,23 @@ function IntroCard() {
                         </h2>
 
                         <div className="values-strip">
-                            <span>Software Engineer bridging frontend development and QA automation to build reliable, user-focused web systems.</span>
-                            {/* <span>Engineering</span>
-                            <span className="dot">•</span>
-                            <span>Sustainability</span>
-                            <span className="dot">•</span>
-                            <span>Creativity</span> */}
+                            <span>Software Engineer focused on building and testing reliable web systems.</span>
+
                         </div>
 
-                        <div class="tags">
-                            <span className="tag-pill primary">Software Engineer</span>
-                            <span className="tag-pill">Full Stack</span>
-                            <span className="tag-pill">Automation</span>
-                            <span className="tag-pill">Testing</span>
-                            <span className="tag-pill">Design</span>
-                            { }
+                        <div className="tags">
+                            <span className="tag-pill" title="I love breaking things before users do">🧪 QA Explorer</span>
+                            <span className="tag-pill">⚙️ Automation Builder</span>
+                            <span className="tag-pill">🧩 Edge-case Hunter</span>
+                            <span className="tag-pill">🎯 Detail-obsessed</span>
+                            <span className="tag-pill">☕ Debugging fueled</span>
                         </div>
 
                         <p className="description">
-                            I focus on building reliable and maintainable web applications, with experience across frontend development, test automation, and release engineering.
-  <br /><br />
-  I care about clean systems, thoughtful user experience, and building software that stays stable as it scales. Outside of engineering, I explore filmmaking, photography, and creative work inspired by everyday life and sustainability.
-</p>
-                            {/* ✳ Software Engineer who is curious and always exploring new ideas. I’m passionate about building reliable,
-                            consistent software with a focus on sustainability both in technology and in life. Outside of engineering,
-                            I enjoy filmmaking, photography, music, and exploring nature. */}
+                            ✳ I focus on building reliable and maintainable web applications, with experience across frontend development, test automation, and release engineering.
+                            I care about clean systems, thoughtful user experience, and building software that stays stable as it scales. Outside of engineering, I explore filmmaking, photography, and creative work inspired by everyday life and sustainability.
+                        </p>
+
                         <p className="description meta">
                             <MdOutlineLocationOn /> San Francisco, CA
                             <span className="time">{time} PST</span>
@@ -140,19 +132,22 @@ function IntroCard() {
                 </div>
             </div>
             <div className="right">
-  <div className="portrait-system">
-    <Image />
-
-    <div className="social-bar">
-      <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link="https://www.linkedin.com/in/destiny-rogers/" />
-      <Social label="GitHub" icon={FaGithub} type="github" link="https://github.com/drogers14" />
-      <Social label="Email" icon={MdEmail} type="email" link="mailto:destinyrogers725@gmail.com" />
+                <div className="portrait-system">
+                    <Image />
+                    <div className="status">
+      <span className="dot"></span>
+      building
     </div>
+                    <div className="social-bar">
+                        <Social label="LinkedIn" icon={FaLinkedin} type="linkedin" link="https://www.linkedin.com/in/destiny-rogers/" />
+                        <Social label="GitHub" icon={FaGithub} type="github" link="https://github.com/drogers14" />
+                        <Social label="Email" icon={MdEmail} type="email" link="mailto:destinyrogers725@gmail.com" />
+                    </div>
 
-    <p className="mini-label">Connect with me</p>
-  </div>
-</div>
-</div>
+                    <p className="mini-label">Connect with me</p>
+                </div>
+            </div>
+        </div>
     );
 }
 
