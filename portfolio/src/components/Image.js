@@ -9,29 +9,6 @@ import dedny5 from '../memoji5.png'
 
 import { useRef, useEffect, useState } from 'react';
 
-// function useMagneticBackground() {
-
-//     const ref = useRef(null);
-
-//     useEffect(() => {
-//         const el = ref.current;
-//         if (!el) return;
-
-//         const handleMove = (e) => {
-//             const x = (e.clientX / window.innerWidth - 0.5) * 20;
-//             const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-//             el.style.transform = `translate(${x}px, ${y}px)`;
-//         };
-
-//         window.addEventListener("mousemove", handleMove);
-//         return () => window.removeEventListener("mousemove", handleMove);
-//     }, []);
-
-//     return ref;
-// }
-
-
 
 function Image({ label, icon: Icon, link, type }) {
     const images = [
@@ -42,12 +19,12 @@ function Image({ label, icon: Icon, link, type }) {
         dedny4,
         dedny5
     ];
-    const hoverImage = dedny; // your special image
+    const hoverImage = dedny;
 
     const [index, setIndex] = useState(0);
     const [hovered, setHovered] = useState(false);
 
-    
+
     useEffect(() => {
         if (hovered) return; // ⛔ stop cycling on hover
 
@@ -58,8 +35,8 @@ function Image({ label, icon: Icon, link, type }) {
         return () => clearInterval(interval);
     }, [hovered, images.length]);
     const currentImage = hovered
-    ? hoverImage
-    : images[index];
+        ? hoverImage
+        : images[index];
 
 
     return (
@@ -68,13 +45,10 @@ function Image({ label, icon: Icon, link, type }) {
             <div className="image-container"
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
-                >
+            >
                 <img
                     src={currentImage} alt="profile"
-                    // src={images[index]}
                     className="avatar"
-                // onMouseEnter={() => setHovered(true)}
-                // onMouseLeave={() => setHovered(false)}
                 />
             </div>
         </>

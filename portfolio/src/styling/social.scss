@@ -46,11 +46,16 @@
 }
 
 /* hover trigger */
+.social-link:hover  {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateY(-3px) scale(1.1);
+
+}
 .social-link:hover .brand-label {
   opacity: 1;
   transform: scale(1);
 }
-
 .social-link:hover .brand-label svg {
   animation-play-state: running;
 }
@@ -60,116 +65,26 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-// .icon {
-//   position: absolute;
-//   inset: 0;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   }
-//   .social-icon {
-//     font-size: clamp(18px, 2vw, 30px);
-//   }
-  
-//   @keyframes rotate {
-//     0% {
-//       transform: rotate(0deg);
-//     }
-  
-//     100% {
-//       transform: rotate(360deg);
-//     }
-//   }
-
-//   .brand {
-
-//     position: relative;
-//     width: clamp(90px, 18vw, 300px);
-//   height: clamp(90px, 18vw, 300px);
-//   flex: 0 0 auto;
-
-// //   border: 2px solid red;
-
-// 	img {
-// 		// display: block;
-// 		border-radius: 50%;
-// 		// width: 100%;
-// 	}
-
-// 	.brand-label {
-//         position: absolute;
-//         inset: 0; /* fills container */
-// 		transition: all 0.2s ease-in-out;
-  
-// 		svg {
-//             position: absolute;
-//             inset: 0;
-//             width: 100%;
-//             height: 100%;
-// 			pointer-events: none;
-
-// 			// animation-name: rotate;
-// 			// animation-duration: 15s;
-// 			// animation-iteration-count: infinite;
-// 			// animation-timing-function: linear;
-// 			// animation-play-state: paused;
-//             opacity: 0;
-//             transform: scale(0.9);
-//             transition: opacity 0.3s ease, transform 0.3s ease;
-          
-//             animation: rotate 15s linear infinite;
-//             animation-play-state: paused;
-// 			text {
-// 				font-family: "Inter", sans-serif;
-//         font-size: 10px;
-// 				letter-spacing: 1.375px;
-// 				font-variation-settings: "wght" 650;
-// 				// fill: #434dad;
-// 				text-transform: uppercase;
-// 			}
-// 		}
-// 	}
-
-// 	&:hover {
-// 		.brand-label svg {
-//             opacity: 1;
-//             transform: scale(1);
-//             animation-play-state: running;
-            
-// 		}
-//        text {
-//             fill: var(--hover-color);
-//           }
-// 	}
-   
-// }
-
-// @keyframes rotate {
-// 	from {
-// 		transform: rotate(360deg);
-// 	}
-// 	to {
-// 		transform: rotate(0);
-// 	}
-// }
 
 
 
-.brand.linkedin:hover .icon {
-    color: #0077B5;
-  }
-  
-  .brand.github:hover .icon {
-    color: #333;
-  }
-  
-  .brand.email:hover .icon {
-    color: #EA4335;
-  }
+.social-link svg {
+  color: #aaa;
+  fill: currentColor; /* 🔥 THIS is the fix */
+  transition: all 0.25s ease;
+}
+.social-link.linkedin:hover svg {
+  color: #0077B5;
+  filter: drop-shadow(0 0 6px rgba(0, 119, 181, 0.6));
+}
 
-//   .brand:hover .icon {
-//     color: var(--hover-color);
-//     transform: scale(1.15);
-//     filter: drop-shadow(0 0 6px var(--hover-color));
-//   }
+.social-link.github:hover svg {
+  color: #333;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+}
+
+.social-link.email:hover svg {
+  color: #EA4335;
+  filter: drop-shadow(0 0 6px rgba(234, 67, 53, 0.5));
+}
+

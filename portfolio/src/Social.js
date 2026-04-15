@@ -10,6 +10,7 @@ const Social = ({ label, icon: Icon, link, type }) => (
   target="_blank"
   rel="noopener noreferrer"
   className={`social-link ${type}`}
+//   className={`social-icon ${type}`}
 >
   <div className="icon">
     <Icon className="social-icon" size={26} />

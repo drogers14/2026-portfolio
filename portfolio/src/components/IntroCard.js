@@ -104,6 +104,7 @@ function IntroCard() {
 
                         <motion.a
                             href="/resume.pdf"
+                            download
                             target="_blank"
                             rel="noopener noreferrer"
                             className="resume-btn"
