@@ -26,6 +26,9 @@ function Stack() {
     return (
         <div className="">
             <h2>Technical Skills</h2>
+            <p className="skills-focus">
+  Primary focus: Frontend engineering & UI systems
+</p>
             <p className="skills-hint">
                 Hover the mini radar labels to explore
             </p>
