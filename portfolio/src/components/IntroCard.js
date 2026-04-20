@@ -84,9 +84,9 @@ function IntroCard() {
                         </div>
 
                         <div className="tags">
-                            <span className="tag-pill" title="I love breaking things before users do">🧪 QA Explorer</span>
+                            <span className="tag-pill" title="I love breaking things before users do">🧩 QA Explorer</span>
                             <span className="tag-pill">⚙️ Automater</span>
-                            <span className="tag-pill">🧩 Bug Hunter</span>
+                            <span className="tag-pill">🔎 Bug Hunter</span>
                             <span className="tag-pill">🎯 Detail-obsessed</span>
                             <span className="tag-pill" title="pun intended">☕ Java fueled</span>
                         </div>

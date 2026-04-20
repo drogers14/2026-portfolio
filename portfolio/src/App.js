@@ -8,6 +8,8 @@ import Stack from './components/Stack';
 import Projects from "./components/Projects";
 import { Navbar } from './Navbar';
 
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard"; // create this
 
 function useScrollReveal(selector = ".reveal") {
   useEffect(() => {
@@ -33,8 +35,7 @@ function useScrollReveal(selector = ".reveal") {
     return () => observer.disconnect();
   }, [selector]);
 }
-
-function App() {
+function Home(){
   useScrollReveal();
 
   return (
@@ -69,6 +70,16 @@ function App() {
       <Projects  />
       </div>
     </div>
+  );
+}
+function App() {
+  useScrollReveal();
+
+  return (
+<Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+    </Routes>
   );
 }
 
