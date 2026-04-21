@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { Analytics } from '@vercel/analytics/react';
+
 import './styling/App.scss';
 
 import IntroCard from './components/IntroCard';
@@ -68,6 +70,8 @@ function App() {
       <div id="projects" className="section">
       <Projects  />
       </div>
+      <Analytics />
+
     </div>
   );
 }
