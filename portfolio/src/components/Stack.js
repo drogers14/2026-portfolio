@@ -30,7 +30,7 @@ function Stack() {
   Primary focus: Frontend engineering & UI systems
 </p>
             <p className="skills-hint">
-                Hover the mini radar labels to explore
+            Interactive breakdown by category (hover to explore skills)
             </p>
             <div className="skills-section">
 

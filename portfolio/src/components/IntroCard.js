@@ -1,6 +1,6 @@
 import '../styling/App.scss';
 // import TextLoop from "react-text-loop";
-import { MdComputer, MdEmail, MdOutlineLocationOn, MdDownload } from "react-icons/md";
+import { MdEmail, MdOutlineLocationOn } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbUserCode } from "react-icons/tb";
 import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
