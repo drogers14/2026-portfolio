@@ -1,0 +1,176 @@
+.dashboard {
+    padding: 40px;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .kanban-column {
+    background: rgba(255,255,255,0.04);
+    border-radius: 16px;
+    padding: 16px;
+  
+    display: flex;
+    flex-direction: column;
+    max-height: 70vh;
+  }
+  
+  .column-body {
+    overflow-y: auto;
+    margin-top: 10px;
+  
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    background: #111;
+    padding: 24px;
+    border-radius: 16px;
+    width: 400px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .kanban-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 16px;
+    cursor: pointer;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    transition: transform 200ms ease, box-shadow 200ms ease;
+  }
+  
+  .kanban-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.08);
+  }
+  
+  /* hierarchy */
+  .card-header h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .role {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  
+  /* meta row */
+  .card-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    opacity: 0.8;
+  }
+  
+  /* footer */
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .tag {
+    background: rgba(255,255,255,0.1);
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+  }
+  .kanban-card.applied {
+    border-left: 4px solid #4da3ff;
+  }
+  
+  .kanban-card.interview {
+    border-left: 4px solid #f5c542;
+  }
+  
+  .kanban-card.offer {
+    border-left: 4px solid #4caf50;
+  }
+  
+  .kanban-card.rejected {
+    border-left: 4px solid #ff5c5c;
+  }
+
+  .tag-chip {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: rgba(0, 150, 255, 0.1);
+    color: #4cc9ff;
+  }
+
+  .widget {
+    background: rgba(20, 20, 30, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .metrics {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .metric {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  .metric span {
+    font-size: 12px;
+    color: #aaa;
+  }
+  
+  .metric h2 {
+    margin: 4px 0 0;
+    font-size: 22px;
+  }
+
+  .widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
