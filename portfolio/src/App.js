@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-// import { Analytics } from '@vercel/analytics/react';
-
+import { Analytics } from '@vercel/analytics/react';
 import './styling/App.scss';
 
 import IntroCard from './components/IntroCard';
@@ -40,6 +39,7 @@ function App() {
   useScrollReveal();
 
   return (
+    <>
     <div className="App">
       {/* <div className="top-banner">
   <div className="banner-track">
@@ -70,9 +70,10 @@ function App() {
       <div id="projects" className="section">
       <Projects  />
       </div>
-      {/* <Analytics /> */}
+      <Analytics />
 
     </div>
+    </>
   );
 }
 
