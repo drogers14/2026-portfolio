@@ -1,0 +1,86 @@
+.project-card {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 18px;
+    padding: 24px;
+    transition: 0.25s ease;
+    min-height: 260px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px);
+    border-color: #444;
+  }
+  
+  .project-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: white;
+  }
+  
+  .project-description {
+    color: #bdbdbd;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+  
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  
+  .tech-stack span {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 14px;
+  }
+  
+  .project-links a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    font-size: 0.9rem;
+  }
+  
+  .project-links a:hover {
+    background: white;
+    color: black;
+  }
+
+  .status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .status.active {
+    background: rgba(0, 255, 140, 0.12);
+    color: #57ffb1;
+  }
+  
+  .status.in-progress {
+    background: rgba(255, 200, 0, 0.12);
+    color: #ffd257;
+  }
+  
+  .status.archived {
+    background: rgba(255, 80, 80, 0.12);
+    color: #ff8f8f;
+  }
