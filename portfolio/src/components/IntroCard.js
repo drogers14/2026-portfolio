@@ -11,9 +11,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 
-
 function IntroCard() {
     const [time, setTime] = useState("");
+    const [isEngineeringHovered, setIsEngineeringHovered] = useState(false);
+    const [isFilmHovered, setIsFilmHovered] = useState(false);
+    const [isSustainabilityHovered, setIsSustainabilityHovered] = useState(false);
 
     useEffect(() => {
         const updateTime = () => {
@@ -92,8 +94,29 @@ function IntroCard() {
                         </div>
 
                         <p className="description">
-                            ✳ I focus on building reliable and maintainable web applications, with experience across frontend development, test automation, and release engineering.
-                            I care about clean systems, thoughtful user experience, and building software that stays stable as it scales. Outside of engineering, I explore filmmaking, photography, and creative work inspired by everyday life and sustainability.
+                            ✳ I enjoy building systems that make software more reliable, testable, and easier to ship with confidence.
+                            I care about clean systems, thoughtful user experience, and building software that stays stable as it scales. Outside of
+                            <span className="interactive-word"
+                                onMouseEnter={() => setIsEngineeringHovered(true)}
+                                onMouseLeave={() => setIsEngineeringHovered(false)}
+                            //   style={{ color: isHovered ? 'blue' : 'black', cursor: 'pointer' }}
+                            >
+                                {isEngineeringHovered ?  "˙✧˖°🛠️ ༘ ⋆｡˚" : " engineering"}
+                            </span>
+                            , I explore
+                            <span className="interactive-word"
+                                onMouseEnter={() => setIsFilmHovered(true)}
+                                onMouseLeave={() => setIsFilmHovered(false)}
+                            >
+                                {isFilmHovered ? "˙✧˖°🍿 ༘ ⋆｡˚"  : " filmmaking" }
+                            </span>,
+                            photography, and creative work inspired by everyday life and 
+                            <span className="interactive-word"
+                                onMouseEnter={() => setIsSustainabilityHovered(true)}
+                                onMouseLeave={() => setIsSustainabilityHovered(false)}
+                            >
+                                {isSustainabilityHovered ? "˙✧˖°🌱♻️ ༘ 🌏⋆｡˚"  : " sustainability" }
+                            </span>.
                         </p>
 
                         <p className="description meta">
@@ -101,26 +124,6 @@ function IntroCard() {
                             <span className="time">{time} PST</span>
                         </p>
 
-
-                        {/* <motion.a
-                            href="/resume.pdf"
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="resume-btn"
-                            whileHover={{ scale: 1.08, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            <MdDownload />
-                            <span>Resume</span>
-                        </motion.a> */}
-                        {/* <div className="interests-row">
-                            <span>🌱 Sustainability</span>
-                            <span>🎬 Film</span>
-                            <span>📸 Photography</span>
-                            <span>🎵 Music</span>
-                            <span>🌄 Nature</span>
-                        </div> */}
                         <div className="sustainability-section">
                             <p className="mini-label">Sustainability impact</p>
 
@@ -135,7 +138,7 @@ function IntroCard() {
             <div className="right">
                 <div className="portrait-system">
                     <Image />
-                    <div className="status">
+                    <div className="nw">
       <span className="dot"></span>
       building
     </div>

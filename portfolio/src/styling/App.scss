@@ -1,79 +1,78 @@
-:root {
-  --section-space-sm: 60px;
-  --section-space-md: 100px;
-  --section-space-lg: 140px;
+  :root {
+    /* spacing */
+    --section-space-sm: 60px;
+    --section-space-md: 100px;
+    --section-space-lg: 140px;
+  
+    /* type scale */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 16px;
+    --text-lg: 20px;
+    --text-xl: 28px;
+    --text-2xl: 40px;
+    --text-3xl: 56px;
+    --text-4xl: 72px;
+  
+    /* line heights */
+    --lh-tight: 1.1;
+    --lh-normal: 1.5;
+    --lh-relaxed: 1.7;
+  
+    /* 🧴 Base / Background system */
+  --bg-0: #FFFFFF;
+  --bg-1: #F7FAFC;
+  --bg-2: #EEF3F8;
+  --bg-3: #E6EDF4;
 
-  /* TYPE SCALE */
-  --text-xs: 12px;
-  --text-sm: 14px;
-  --text-md: 16px;
-  --text-lg: 20px;
-  --text-xl: 28px;
-  --text-2xl: 40px;
-  --text-3xl: 56px;
-  --text-4xl: 72px;
+  /* 🌫️ Surface / Card system */
+  --surface-0: rgba(255, 255, 255, 0.85);
+  --surface-1: #F9FBFD;
+  --surface-border: rgba(31, 41, 51, 0.08);
 
-  /* LINE HEIGHTS */
-  --lh-tight: 1.1;
-  --lh-normal: 1.5;
-  --lh-relaxed: 1.7;
+  /* 🧊 Primary accent (muted steel-blue) */
+  --primary: #6F9FBE;
+  --primary-soft: #A9C3D6;
+  --primary-faint: rgba(111, 159, 190, 0.12);
 
-  /* TYPO SPACING SYSTEM */
-  --space-title: 8px;
-  --space-section: 16px;
-  --space-block: 24px;
-  --title-font: system-ui, sans-serif;
+  /* 💙 Secondary cool tones */
+  --cool-1: #DCEAF4;
+  --cool-2: #C9DCEB;
+  --cool-3: #B8CFDF;
 
-  --title-hero: 3.5rem;
-  --title-section: 2rem;
-  --title-sub: 1.25rem;
+  /* 🌿 Warm balance */
+  --warm-0: #FFFFFF;
+  --warm-1: #FAFAF8;
+  --warm-2: #F3F1ED;
 
-  --title-weight: 800;
+  /* ✍️ Typography */
+  --text-0: #1F2933;
+  --text-1: rgba(31, 41, 51, 0.75);
+  --text-2: rgba(31, 41, 51, 0.55);
 
-  --title-spacing: -0.03em;
-  --black: rgb(46, 45, 43);
-  /* Primary blues */
-  --fa-blue-1: #00c6ff;
-  --fa-blue-2: #0072ff;
-  --fa-blue-3: #5ee7ff;
+  /* ✨ Glow system (subtle only) */
+  --glow: rgba(111, 159, 190, 0.10);
+  --glow-soft: rgba(111, 159, 190, 0.06);
 
-  /* Aqua / glass tones */
-  --fa-aqua: #7df9ff;
-  --fa-glass: rgba(255, 255, 255, 0.25);
+  /* 🧱 Borders */
+  --border-light: rgba(31, 41, 51, 0.06);
+  --border: rgba(31, 41, 51, 0.10);
+  }
 
-  /* Greens */
-  --fa-green-1: #00ff9c;
-  --fa-green-2: #38f9d7;
-
-  /* Backgrounds */
-  --fa-bg-light: #f0fbff;
-  --fa-bg-sky: #dff6ff;
-
-  /* Accents */
-  --fa-white: #ffffff;
-  --fa-glow: rgba(0, 198, 255, 0.6);
-  /* classic sky gradient */
---fa-gradient-sky: linear-gradient(135deg, #00c6ff, #0072ff);
-
-/* aqua glow */
---fa-gradient-aqua: linear-gradient(135deg, #5ee7ff, #7df9ff);
-
-/* green energy */
---fa-gradient-green: linear-gradient(135deg, #00ff9c, #38f9d7);
-
-/* soft background */
---fa-gradient-bg: linear-gradient(180deg, #f0fbff, #dff6ff);
-}
-html {
-  scroll-behavior: smooth;
-  background: linear-gradient(180deg, #dff6ff, #ffffff);
-
-}
-body {
-  // background: linear-gradient(180deg, #dff6ff, #ffffff);
-
-  font-family: system-ui, sans-serif;
-}
+  html {
+    scroll-behavior: smooth;
+    background: var(--gradient-main);
+  }
+  
+  body {
+    font-family: system-ui, sans-serif;
+    color: var(--text);
+  }
+  
+  .App {
+    background: var(--bg-1);
+    min-height: 100vh;
+  }
 
 h1 {
   font-size: var(--text-4xl);
@@ -100,26 +99,21 @@ p {
   font-size: var(--text-md);
   line-height: var(--lh-relaxed);
   margin-bottom: var(--space-block);
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--text-soft);
+
 }
 
-.App {
-  text-align: left;
-  height: 100vh;
-  padding-top: 120px; /* match your nav height */
-  background: linear-gradient(180deg, #dff6ff, #ffffff);
-  min-height: 100vh;
-  padding: 0 clamp(16px, 4vw, 64px);
-  // background-image: linear-gradient(180deg, #dff6ff, #ffffff
-  //   ), 
-  // url('../cardboard-texture.jpg');
+// .App {
+//   text-align: left;
+//   height: 100vh;
+//   padding-top: 120px; /* match your nav height */
+//   // background: linear-gradient(180deg, #dff6ff, #ffffff);
+//   background: var(--gradient-soft);
 
-  // background-image: linear-gradient(rgba(242, 242, 242, 0.5),
-  // rgba(242, 242, 242, 0.5)
-   /* rgba(0, 0, 0, 0.5) */
-  //  ), /* Solid color overlay */
-  // url('./texture-01.jpg');
-}
+//   min-height: 100vh;
+//   padding: 0 clamp(16px, 4vw, 64px);
+
+// }
 .values-strip {
   display: flex;
   align-items: center;
@@ -200,8 +194,8 @@ p {
 
   /* subtle depth */
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.08),
-    0 2px 8px rgba(0, 0, 0, 0.04);
+    0 10px 30px rgba(0, 0, 0, 0.06),
+    0 0 20px rgba(0, 198, 255, 0.12);
 }
 .social-bar {
   display: flex;
@@ -365,8 +359,7 @@ p {
 }
 .tag-pill:hover {
   transform: translateY(-2px) scale(1.05);
-  background: #222;
-  color: white;
+  border: 1px solid #7dd3fc;
   // transform: scale(1.06);
 }
 .social-row {
@@ -419,7 +412,7 @@ gap: 14px;
   padding: 0px;
   margin: 0px;
 }
-.status {
+.nw {
   position: absolute;
   bottom: 12px;
   right: 12px;
@@ -639,6 +632,15 @@ body {
   ;
 }
 
+.interactive-word {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px dotted #999;}
+
+.interactive-word:hover {
+  opacity: 0.8;
+}
+
 /* TYPOGRAPHY */
 .title {
   font-size: clamp(56px, 6vw, 80px);
@@ -658,30 +660,29 @@ body {
 /* TAGS */
 .tags {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
   margin: 20px 0;
 }
 
 .tags span {
-  // background: linear-gradient(
-  //   135deg,
-  //   var(--fa-aqua),
-  //   var(--fa-blue-1)
-  // );
-background: var(--black);
-  color: white;
+  background: var(--surface-0);
+  border: 1px solid var(--border-light);
 
+  box-shadow: 0 2px 10px var(--glow-soft);
+
+  color: var(--text-0);
+
+  border-radius: 999px;
   padding: 8px 14px;
-  border-radius: 20px;
 
-  font-size: 14px;
-
-  // box-shadow:
-  //   inset 0 2px 6px rgba(255,255,255,0.6),
-  //   0 4px 12px var(--fa-glow);
+  transition: all 0.2s ease;
 }
 
+.tags span:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px var(--glow);
+}
 /* DESCRIPTION */
 .description {
   margin-top: 20px;
@@ -788,7 +789,9 @@ background: var(--black);
   font-weight: 500;
   text-decoration: none;
 
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  // background: linear-gradient(135deg, #00c6ff, #0072ff);
+  background: var(--gradient-main);
+
   color: white;
 
   transition: all 0.3s ease;
@@ -874,4 +877,10 @@ background: var(--black);
 
 .social-arc a:nth-child(3) {
   transform: translateY(6px);
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
 }
