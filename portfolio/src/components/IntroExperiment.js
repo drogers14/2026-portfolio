@@ -134,7 +134,7 @@ export default function IntroCard() {
                     <div className="hero-summary">
 
                         <p>
-                            Building <span className="highlighter">reliable</span> automation systems through
+                            <span style={{fontWeight: "700"}}>Software Engineer in Test</span> building <span className="highlighter">reliable</span> automation systems through
                             automation engineering, <span className="highlighter">CI/CD</span> workflows,
                             <span className="highlighter">scalable testing</span>, and  <span className="highlighter">quality-focused</span> tooling.
                         </p>
