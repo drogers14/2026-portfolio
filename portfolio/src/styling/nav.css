@@ -1,43 +1,36 @@
 .nav {
   position: fixed;
-  top: 20px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+  width: fit-content;
+
 }
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
-
-  padding: 10px 22px;
-
-  background: rgba(255,255,255,0.15);
-
-  backdrop-filter: blur(18px);
-
-  border-radius: 999px;
-
-  border: 1px solid rgba(255,255,255,0.4);
-
-  box-shadow:
-    0 8px 25px rgba(0, 198, 255, 0.25);
+  gap: 28px;
 }
+
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 10px 22px;
+  gap: 22px;
 
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(18px);
+  padding: 10px 16px;
+
+  background: rgba(255,255,255,0.45);
+
+  backdrop-filter: blur(12px);
 
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.4);
+
+  border: 1px solid rgba(255,255,255,0.45);
 
   box-shadow:
-    0 8px 25px rgba(0, 198, 255, 0.25);
+    0 10px 30px rgba(30, 167, 225, 0.08);
 }
 
 .nav-inner a {
@@ -45,7 +38,7 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 
   position: relative;
   transition: 0.3s ease;
@@ -81,23 +74,28 @@
 }
 
 .resume-btn {
-  padding: 10px 18px;
+  padding: 8px 18px;
 
-  border-radius: 999px;
+  border-radius: 16px;
 
-  border: 1px solid rgba(0,0,0,0.08);
+  background: #dff57b;
 
-  background: rgba(255,255,255,0.55);
+  color: #111;
 
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0,0,0,0.05);
+
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 14px rgba(223, 245, 123, 0.35);
 
   transition: all 0.2s ease;
-
-  font-weight: 500;
 }
-
 .resume-btn:hover {
   transform: translateY(-2px);
 
-  border-color: rgba(0,0,0,0.16);
+  background: #e7ff8f;
+
+  box-shadow:
+    0 8px 24px rgba(223, 245, 123, 0.45);
 }
