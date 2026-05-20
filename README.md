@@ -41,7 +41,6 @@ The site focuses on clean UI design, responsive layouts, reusable components, an
 - GitHub
 
 ### Development & Engineering Tools
-- Playwright
 - GitHub Actions
 - Vercel
 
@@ -53,9 +52,8 @@ The site focuses on clean UI design, responsive layouts, reusable components, an
 ```txt
 src/
   components/
-  pages/
   styling/
-  assets/
+  images/
 ```
 
 ### components/
@@ -64,7 +62,7 @@ Reusable UI components including project cards, navigation, and layout elements.
 ### styling/
 SCSS styling architecture organized by feature/component.
 
-### assets/
+### images/
 Static assets including images, icons, and project visuals.
 
 ---
@@ -118,4 +116,4 @@ This portfolio is also being used as an active learning project for:
 
 GitHub: https://github.com/drogers14
 
-LinkedIn: [[Connect on LinkedIn](https://www.linkedin.com/in/destiny-rogers/)]
+LinkedIn: https://www.linkedin.com/in/destiny-rogers/
