@@ -16,7 +16,10 @@ function IntroCard() {
     const [isEngineeringHovered, setIsEngineeringHovered] = useState(false);
     const [isFilmHovered, setIsFilmHovered] = useState(false);
     const [isSustainabilityHovered, setIsSustainabilityHovered] = useState(false);
-
+    const currentSong = {
+        title: "Book of Love",
+        artist: "The Magnetic Fields"
+      };
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();

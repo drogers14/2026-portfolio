@@ -11,16 +11,23 @@ export function Navbar() {
   }, []);
   return (
 
-        <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
-          <div className="nav-inner">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
+    <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
+      <div className="nav-inner">
+      <div className="nav-links">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+    </div>
 
-          </div>
-        </nav>
-    
-);
+      <a href="/resume.pdf"
+        target="_blank"
+        rel="noreferrer"
+        className="resume-btn">Resume</a>
+              </div>
+
+    </nav>
+
+  );
 }
