@@ -4,7 +4,8 @@ import '../styling/App.scss';
 import Image from './Image';
 import SignalCard from "./SignalCard";
 import Social from '../Social';
-
+// import EyesGraphic from '../images/eyes.png'
+import Eyes from './Eyes';
 import { useEffect, useState } from "react";
 
 import { MdEmail, MdOutlineLocationOn } from "react-icons/md";
@@ -14,8 +15,8 @@ import { TbUserCode } from "react-icons/tb";
 export default function IntroCard() {
 
     const currentSong = {
-        title: "Book of Love",
-        artist: "The Magnetic Fields"
+        title: "A Forest",
+        artist: "The Cure"
     };
 
     const [time, setTime] = useState("");
@@ -42,7 +43,35 @@ export default function IntroCard() {
         return () => clearInterval(interval);
 
     }, []);
+    useEffect(() => {
+        const handleMove = (e) => {
+          const eyes = document.querySelectorAll(".pupil");
+      
+            eyes.forEach((eye) => {
+                const rect = eye.parentElement.getBoundingClientRect();
 
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+
+                const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+
+                const maxX = 14;
+                const maxY = 18;
+
+                const x = Math.cos(angle) * maxX;
+                const y = Math.sin(angle) * maxY;
+
+
+                eye.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        };
+
+        window.addEventListener("mousemove", handleMove);
+
+        return () => {
+            window.removeEventListener("mousemove", handleMove);
+        };
+    }, []);
     return (
 
         <section className="hero">
@@ -78,7 +107,13 @@ export default function IntroCard() {
                     <div className="portrait-system">
                         <div className="hero-heading">
                             <h1 className="title">
-                                Hi <span className="wave">👋</span>
+                                Hi <span className="eyes-wrapper">
+                                    <Eyes className="eyes-base" />
+
+                                    <div className="pupil left"></div>
+                                    <div className="pupil right"></div>
+                                </span>
+                                {/* <span className="wave">👋</span> */}
                             </h1>
 
                             <h2 className="subtitle">
@@ -89,7 +124,8 @@ export default function IntroCard() {
                         <Image />
 
                         <div className="nw">
-                            {/* 👀 try hovering · no pressure · :) */}
+                            <span className="dot"></span>
+                            building
                         </div>
 
                     </div>
@@ -150,12 +186,6 @@ export default function IntroCard() {
                         link="mailto:destinyrogers725@gmail.com"
                     />
 
-                    <Social
-                        label="Resume"
-                        type="resume"
-                        link="/resume.pdf"
-                    />
-
                 </div>
 
             </div>
@@ -189,7 +219,7 @@ export default function IntroCard() {
 
                     <SignalCard
                         label="RECENTLY EXPLORED"
-                        title="San Francisco"
+                        title="Golden Gate Park"
                         subtitle="foggy walks + coffee shops"
                         emoji="🌁"
                         status="RECENT"
