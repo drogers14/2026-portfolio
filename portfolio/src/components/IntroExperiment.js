@@ -46,8 +46,8 @@ export default function IntroCard() {
     }, []);
     useEffect(() => {
         const handleMove = (e) => {
-          const eyes = document.querySelectorAll(".pupil");
-      
+            const eyes = document.querySelectorAll(".pupil");
+
             eyes.forEach((eye) => {
                 const rect = eye.parentElement.getBoundingClientRect();
 
@@ -78,38 +78,40 @@ export default function IntroCard() {
         <section className="hero">
 
             {/* NAV SPACING */}
-            <div className="hero-spacer"></div>
+            {/* <div className="hero-spacer"></div> */}
 
             {/* HERO CENTER */}
             <div className="hero-center-layout">
 
-                {/* OPEN TO WORK */}
-                <div className="open-to-work-badge">
-                    <TbUserCode />
-                    Open to Work · Software Engineer | QA Automation
-                </div>
+
                 <div className="hero-portrait-row">
 
                     {/* LEFT */}
                     <div className="hero-meta-side">
 
-               {/* SOCIALS */}
-               <p className="mini-label">Connect with me</p>
+                        {/* SOCIALS */}
+                        {/* OPEN TO WORK */}
+                        <div className="open-to-work-badge">
+                            <TbUserCode />
+                            Open to Work
+                            {/* · Software Engineer | QA Automation */}
+                        </div>
+                        <p className="mini-label">Connect with me</p>
 
-               <div className="social-bar centered">
+                        <div className="social-bar centered">
 
-<Social
-    label="LinkedIn"
-    icon={FaLinkedin}
-    type="linkedin"
-    link="https://www.linkedin.com/in/destiny-rogers/"
-/>
+                            <Social
+                                label="LinkedIn"
+                                icon={FaLinkedin}
+                                type="linkedin"
+                                link="https://www.linkedin.com/in/destiny-rogers/"
+                            />
 
-<Social
-    label="GitHub"
-    icon={FaGithub}
-    type="github"
-    link="https://github.com/drogers14"
+                            <Social
+                                label="GitHub"
+                                icon={FaGithub}
+                                type="github"
+                                link="https://github.com/drogers14"
                             />
 
                             <Social
@@ -121,25 +123,26 @@ export default function IntroCard() {
 
                         </div>
 
- 
+
                     </div>
 
                     {/* CENTER */}
                     <div className="portrait-system">
                         <div className="hero-heading">
+                            <span className="hero-marquee">Software Engineer in Test · QA Automation · Developer Tooling</span>
                             <h1 className="title">
-                                 <span className="first-name">Destiny</span> Rogers 
-                                 {/* <span className="eyes-wrapper"> */}
-                                    {/* <Eyes className="eyes-base" />
+                                <span className="first-name">Destiny</span> Rogers
+                                {/* <span className="eyes-wrapper"> */}
+                                {/* <Eyes className="eyes-base" />
 
                                     <div className="pupil left"></div>
                                     <div className="pupil right"></div>
                                 </span>  */}
-                                
+
                             </h1>
 
                             <h2 className="subtitle">
-                                Software Engineer in Test
+                                {/* Software Engineer in Test */}
                             </h2>
                             {/* <span className="wave">👋</span> */}
                         </div>
@@ -161,6 +164,7 @@ export default function IntroCard() {
                             Building <span className="highlighter">reliable</span> automation systems through
                             automation engineering, <span className="highlighter">CI/CD</span> workflows,
                             <span className="highlighter">scalable testing</span>, and  <span className="highlighter">quality-focused</span> tooling.
+                            Outside of engineering, I enjoy photography, filmmaking, and exploring thoughtful digital experiences.
                         </p>
                         {/* TAGS */}
                         <div className="tags centered">
@@ -186,16 +190,16 @@ export default function IntroCard() {
                             <MdOutlineLocationOn />
                             San Francisco, CA
                             <span className="time">
-                            {time} PST
-                        </span>
+                                {time} PST
+                            </span>
                         </p>
 
-                        
+
                     </div>
 
                 </div>
 
-                
+
 
             </div>
 
@@ -232,15 +236,15 @@ export default function IntroCard() {
                         subtitle="foggy walks + coffee shops"
                         emoji="🌁"
                         status="RECENT"
-                        
+
                     />
-                     <SignalCard
+                    <SignalCard
                         label=""
                         title={<span className="carbon-badge"><WebsiteCarbonBadge dark={false} url="www.destinyrogers.dev" /></span>}
                         subtitle="optimized for performance + sustainability"
                         emoji="♻️"
                         status="SUSTAINABILITY IMPACT"
-                        
+
                     />
                 </div>
 

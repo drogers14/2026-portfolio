@@ -56,7 +56,7 @@ function App() {
 </div> */}
       <Navbar />
       <div id="home">
-      {/* <IntroCardREDUX /> */}
+      {/* <IntroCard/> */}
       <IntroExperiment/>
       </div>
 
