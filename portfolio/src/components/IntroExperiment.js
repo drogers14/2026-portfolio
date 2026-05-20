@@ -7,6 +7,7 @@ import Social from '../Social';
 // import EyesGraphic from '../images/eyes.png'
 import Eyes from './Eyes';
 import { useEffect, useState } from "react";
+import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
 
 import { MdEmail, MdOutlineLocationOn } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -92,33 +93,55 @@ export default function IntroCard() {
                     {/* LEFT */}
                     <div className="hero-meta-side">
 
-                        <p className="meta-location">
-                            <MdOutlineLocationOn />
-                            San Francisco, CA
-                        </p>
+               {/* SOCIALS */}
+               <p className="mini-label">Connect with me</p>
 
-                        <span className="time">
-                            {time} PST
-                        </span>
+               <div className="social-bar centered">
 
+<Social
+    label="LinkedIn"
+    icon={FaLinkedin}
+    type="linkedin"
+    link="https://www.linkedin.com/in/destiny-rogers/"
+/>
+
+<Social
+    label="GitHub"
+    icon={FaGithub}
+    type="github"
+    link="https://github.com/drogers14"
+                            />
+
+                            <Social
+                                label="Email"
+                                icon={MdEmail}
+                                type="email"
+                                link="mailto:destinyrogers725@gmail.com"
+                            />
+
+                        </div>
+
+ 
                     </div>
 
                     {/* CENTER */}
                     <div className="portrait-system">
                         <div className="hero-heading">
                             <h1 className="title">
-                                Hi <span className="eyes-wrapper">
-                                    <Eyes className="eyes-base" />
+                                 <span className="first-name">Destiny</span> Rogers 
+                                 {/* <span className="eyes-wrapper"> */}
+                                    {/* <Eyes className="eyes-base" />
 
                                     <div className="pupil left"></div>
                                     <div className="pupil right"></div>
-                                </span>
-                                {/* <span className="wave">👋</span> */}
+                                </span>  */}
+                                
                             </h1>
 
                             <h2 className="subtitle">
-                                I'm Destiny Rogers
+                                Software Engineer in Test
                             </h2>
+                            {/* <span className="wave">👋</span> */}
                         </div>
 
                         <Image />
@@ -134,7 +157,8 @@ export default function IntroCard() {
                     <div className="hero-summary">
 
                         <p>
-                            <span style={{fontWeight: "700"}}>Software Engineer in Test</span> building <span className="highlighter">reliable</span> automation systems through
+                            {/* <span style={{fontWeight: "700"}}>Software Engineer in Test</span>  */}
+                            Building <span className="highlighter">reliable</span> automation systems through
                             automation engineering, <span className="highlighter">CI/CD</span> workflows,
                             <span className="highlighter">scalable testing</span>, and  <span className="highlighter">quality-focused</span> tooling.
                         </p>
@@ -158,35 +182,20 @@ export default function IntroCard() {
                             </span> */}
 
                         </div>
+                        <p className="description meta">
+                            <MdOutlineLocationOn />
+                            San Francisco, CA
+                            <span className="time">
+                            {time} PST
+                        </span>
+                        </p>
+
+                        
                     </div>
 
                 </div>
 
-                {/* SOCIALS */}
-                <div className="social-bar centered">
-
-                    <Social
-                        label="LinkedIn"
-                        icon={FaLinkedin}
-                        type="linkedin"
-                        link="https://www.linkedin.com/in/destiny-rogers/"
-                    />
-
-                    <Social
-                        label="GitHub"
-                        icon={FaGithub}
-                        type="github"
-                        link="https://github.com/drogers14"
-                    />
-
-                    <Social
-                        label="Email"
-                        icon={MdEmail}
-                        type="email"
-                        link="mailto:destinyrogers725@gmail.com"
-                    />
-
-                </div>
+                
 
             </div>
 
@@ -223,8 +232,16 @@ export default function IntroCard() {
                         subtitle="foggy walks + coffee shops"
                         emoji="🌁"
                         status="RECENT"
+                        
                     />
-
+                     <SignalCard
+                        label=""
+                        title={<span className="carbon-badge"><WebsiteCarbonBadge dark={false} url="www.destinyrogers.dev" /></span>}
+                        subtitle="optimized for performance + sustainability"
+                        emoji="♻️"
+                        status="SUSTAINABILITY IMPACT"
+                        
+                    />
                 </div>
 
             </div>
