@@ -24,7 +24,7 @@ const Social = ({ label, link, type }) => {
           <Icon className="social-icon" size={28} />
         </div>
   
-        <div className="brand-label">
+        {/* <div className="brand-label">
           <svg viewBox="0 0 300 300">
             <defs>
               <path
@@ -40,7 +40,7 @@ const Social = ({ label, link, type }) => {
               </textPath>
             </text>
           </svg>
-        </div>
+        </div> */}
       </a>
     );
   };

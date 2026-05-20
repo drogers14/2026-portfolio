@@ -3,6 +3,8 @@ import { Analytics } from '@vercel/analytics/react';
 import './styling/App.scss';
 
 import IntroCard from './components/IntroCard';
+import IntroCardREDUX from './components/IntroCardREDUX';
+import IntroExperiment from './components/IntroExperiment';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Stack from './components/Stack';
@@ -54,7 +56,8 @@ function App() {
 </div> */}
       <Navbar />
       <div id="home">
-      <IntroCard />
+      {/* <IntroCardREDUX /> */}
+      <IntroExperiment/>
       </div>
 
       <div id="skills" className="section">
