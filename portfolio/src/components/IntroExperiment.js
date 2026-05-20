@@ -73,6 +73,15 @@ export default function IntroCard() {
             window.removeEventListener("mousemove", handleMove);
         };
     }, []);
+    const [latestCommit, setLatestCommit] = useState(null);
+
+useEffect(() => {
+  fetch("https://api.github.com/repos/drogers14/playwright-automation-framework/commits")
+    .then((res) => res.json())
+    .then((data) => {
+      setLatestCommit(data[0]);
+    });
+}, []);
     return (
 
         <section className="hero">
@@ -217,8 +226,12 @@ export default function IntroCard() {
                     <SignalCard
                         label="CURRENTLY BUILDING"
                         title="Playwright Framework"
-                        subtitle="TypeScript · CI/CD · API Testing"
-                        emoji="⚙️"
+                        subtitle={latestCommit?.commit.message}
+                        emoji={<a href="https://github.com/drogers14/playwright-automation-framework"
+                            target="_blank"
+                            rel="noreferrer"
+                            style={{ textDecoration: "none" }}
+                        >⚙️</a>}
                         status="LIVE"
                     />
 
