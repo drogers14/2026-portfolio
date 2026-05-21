@@ -6,7 +6,9 @@ export default function SignalCard({
     title,
     subtitle,
     emoji,
-    status
+    status,
+    opt,
+    ...props
 }) {
 
     return (
@@ -14,7 +16,7 @@ export default function SignalCard({
 
             <div className="signal-top">
 
-                <div className="signal-status">
+                <div className="signal-status" style={{ color: props.statusColor }}>
                     <span className="live-dot"></span>
 
                     <p>{status}</p>
@@ -39,7 +41,9 @@ export default function SignalCard({
                 <span className="signal-subtitle">
                     {subtitle}
                 </span>
-
+                <span className="signal-subtitle">
+                    {opt}
+                </span>
             </div>
 
         </div>

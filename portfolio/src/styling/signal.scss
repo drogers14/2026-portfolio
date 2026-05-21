@@ -66,6 +66,12 @@
 
 .signal-emoji {
     font-size: 24px;
+    transition: transform 0.25s ease;
+
+}
+
+.signal-emoji:hover {
+    transform: rotate(18deg) scale(1.08);
 }
 
 .signal-label {
