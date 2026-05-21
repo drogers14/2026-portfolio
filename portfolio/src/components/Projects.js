@@ -2,12 +2,18 @@ import '../styling/App.scss'
 import ProjectCard from './ProjectCard';
 function Projects() {
     return (
-        <>
-            <h1>Projects</h1>
-            <h2>Ideas Brought to Life</h2>
+        <div className="hero">
+            <h1 className="title">Projects</h1>
+
+            <h2><span style={{ color: '#dff58a'}}>{'>' }</span> Ideas Brought to Life</h2>
             <div className="projects-grid">
             <ProjectCard
-                title="Playwright Automation Framework"
+                title={
+                    <span>
+                      <span style={{ color: '#dff58a' }}>[00]</span>
+                      {" "}Playwright Automation Framework
+                    </span>
+                  }
                 description="Scalable Playwright + TypeScript automation framework focused on reusable architecture, CI/CD integration, API testing, and reliable end-to-end validation."
                 techStack={[
                     "Playwright",
@@ -19,7 +25,12 @@ function Projects() {
                 status= "In Progress"
             />
                <ProjectCard
-                title="Portfolio Built with React"
+                title={
+                    <span>
+                      <span style={{ color: '#dff58a' }}>[01]</span>
+                      {" "}Portfolio Built with React
+                    </span>
+                  }
                 description="React portfolio website showcasing modern web development practices, creative UI design, and professional growth across software engineering, automation, and quality engineering."
                 techStack={[
                     "React",
@@ -31,12 +42,9 @@ function Projects() {
                 demo="https://www.destinyrogers.dev/"
                 status= "Active"
             />
-                        {/* <h1 className="title-hero">🚧 Coming Soon! 🚧</h1> */}
 
-            {/* <ProjectCard />
-            <ProjectCard /> */}
             </div>
-        </>
+        </div>
     )
 }
 

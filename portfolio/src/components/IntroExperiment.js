@@ -15,11 +15,31 @@ import { TbUserCode } from "react-icons/tb";
 
 export default function IntroCard() {
 
-    const currentSong = {
-        title: "A Forest",
-        artist: "The Cure"
-    };
+    // const currentSong = {
+    //     title: "A Forest",
+    //     artist: "The Cure"
+    // };
+    const songs = [
+        {
+          title: "A Forest",
+          artist: "The Cure"
+        },
+        {
+          title: "Teardrop",
+          artist: "Massive Attack"
+        },
+        {
+        title: "Sell Me a Coat",
+        artist: "David Bowie"
+      },
+      ];
+      const getRandomSong = () => {
+        return songs[Math.floor(Math.random() * songs.length)];
+      };
+      const [currentSong] = useState(getRandomSong);
 
+    // const randomIndex = Math.floor(Math.random() * songs.length);
+    // const currentSong = songs[randomIndex];
     const [time, setTime] = useState("");
 
     useEffect(() => {
@@ -82,6 +102,59 @@ export default function IntroCard() {
                 setLatestCommit(data[0]);
             });
     }, []);
+
+    let statusColor = "#4ade80";
+let statusLabel = "ACTIVE";
+
+let lastPushDate = null;
+let hoursAgo = 0;
+
+if (latestCommit) {
+  lastPushDate = new Date(
+    latestCommit.commit.author.date
+  );
+
+  hoursAgo =
+    (Date.now() - lastPushDate.getTime()) /
+    (1000 * 60 * 60);
+
+  if (hoursAgo > 24) {
+    statusColor = "#d7ef63";
+    statusLabel = "QUIET";
+  }
+
+  if (hoursAgo > 72) {
+    statusColor = "#b0b0b0";
+    statusLabel = "IDLE";
+  }
+}
+const relativeTime = new Intl.RelativeTimeFormat('en', {
+  numeric: 'auto',
+});
+
+function getTimeAgo(date) {
+  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+
+  const intervals = {
+    year: 31536000,
+    month: 2592000,
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+  };
+
+  for (const [unit, value] of Object.entries(intervals)) {
+    const diff = Math.floor(seconds / value);
+
+    if (diff >= 1) {
+      return relativeTime.format(-diff, unit);
+    }
+  }
+
+  return 'just now';
+}
+
+
     return (
 
         <section className="hero">
@@ -196,13 +269,6 @@ export default function IntroCard() {
 
                     {/* <Image /> */}
 
-
-
-
-
-
-
-
                 </div>
 
             </div>
@@ -224,13 +290,19 @@ export default function IntroCard() {
                     <SignalCard
                         label="CURRENTLY BUILDING"
                         title="Playwright Framework"
-                        subtitle={latestCommit?.commit.message}
+                        subtitle={
+                            latestCommit
+                              ? `${latestCommit.commit.message} · pushed ${getTimeAgo(lastPushDate)}`
+                              : "loading..."
+                          }
                         emoji={<a href="https://github.com/drogers14/playwright-automation-framework"
                             target="_blank"
                             rel="noreferrer"
                             style={{ textDecoration: "none" }}
                         >⚙️</a>}
-                        status="LIVE"
+                        status={statusLabel}
+                        statusColor={statusColor}
+                        // opt={latestCommit?.commit.author.date}
                     />
 
                     <SignalCard
@@ -265,3 +337,4 @@ export default function IntroCard() {
 
     );
 }
+

@@ -3,7 +3,7 @@ import Timeline from './Timeline';
 
 function Experience() {
     return (
-        <div className="card">
+        <div className="hero">
             <div className="section-header">
                 <h2>Experience</h2>
                 <p className="section-subtitle">
