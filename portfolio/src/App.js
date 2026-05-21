@@ -59,7 +59,9 @@ function App() {
       {/* <IntroCard/> */}
       <IntroExperiment/>
       </div>
-
+      <div id="projects" className="section">
+      <Projects  />
+      </div>
       <div id="skills" className="section">
       <Stack />
       </div>
@@ -70,9 +72,7 @@ function App() {
       <div id="education" className="section">
       <Education  />
       </div>
-      <div id="projects" className="section">
-      <Projects  />
-      </div>
+   
       <Analytics />
 
     </div>

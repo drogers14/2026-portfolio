@@ -1,6 +1,6 @@
 import '../styling/stack.scss';
 import Marquee from "react-fast-marquee";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { IoMdGitMerge, IoLogoPython, IoLogoJavascript } from "react-icons/io";
 import {
     FaReact, FaDocker, FaJenkins, FaTools,
@@ -16,6 +16,7 @@ import { VscVscode } from "react-icons/vsc";
 
 
 function Skills({ activeCategory }) {
+  
     const getClass = (cat) => {
         return `skill ${activeCategory === cat ? 'active' : ''}`;
     };
@@ -55,98 +56,130 @@ function Skills({ activeCategory }) {
     return (
         <div className="">
 
+<div className="skills-group">
+  <h3>{'>'} testing</h3>
 
-            <div className="skills-group">
-                <h3>Frontend</h3>
-                <div className="skills-cloud">
+  <div className="skills-cloud">
+    <span className={getClass('testing')}>
+      <FaTools /> Playwright
+    </span>
 
-                    <span className={getClass('frontend')}>
-                        <FaReact /> React
-                    </span>
+    <span className="skill">
+      <FaTools /> Selenium
+    </span>
 
-                    <span className={getClass('frontend')}>
-                        <IoLogoJavascript /> Javascript
-                    </span>
-                    <span className={getClass('frontend')}><FaHtml5 /> HTML</span>
-                    <span className={getClass('frontend')}><FaCss3 /> CSS</span>
-                    <span className={getClass('frontend')}><BsFiletypeScss /> SCSS</span>
-                </div>
-            </div>
+    <span className="skill">
+      <SiPostman /> Postman
+    </span>
 
-            <div className="skills-group">
-                <h3>Tools</h3>
+    <span className="skill">
+      <FaMobileAlt /> LambdaTest
+    </span>
+  </div>
+</div>
 
-                <div className="skills-cloud">
-                    <span className={getClass('fundamentals')}>
-                        <IoMdGitMerge /> Git
-                    </span>
+<div className="skills-group">
+  <h3>{'>'} building</h3>
 
-                    <span className={getClass('fundamentals')}>
-                        <FaGithub /> GitHub
-                    </span>
-                    <span className={getClass('fundamentals')}><VscVscode /> VS Code</span>
-                    <span className={getClass('fundamentals')}><SiGithubcopilot /> Copilot</span>
-                    <span className={getClass('fundamentals')}><SiJira /> Jira</span>
+  <div className="skills-cloud">
 
-                </div>
-            </div>
-            <div className="skills-group">
-                <h3>Cloud & DevOps</h3>
-                <div className="skills-cloud">
-                    <span className={getClass('devops')}>
-                        <FaDocker /> Docker
-                    </span>
-                    <span className="skill"><FaJenkins /> Jenkins</span>
-                    <span className="skill"><DiGoogleCloudPlatform /> GCP</span>
-                    <span className="skill"><SiVercel /> Vercel</span>
-                </div>
-            </div>
+    <span className={getClass('frontend')}>
+      <FaReact /> React
+    </span>
 
-            <div className="skills-group">
-                <h3>Testing & Automation</h3>
-                <div className="skills-cloud">
-                    <span className={getClass('testing')}>
-                        <FaTools /> Playwright
-                    </span>
-                    <span className="skill"><FaTools /> Selenium</span>
-                    <span className="skill"><SiPostman /> Postman</span>
-                    <span className="skill"><FaMobileAlt />LamdaTest</span>
+    <span className={getClass('frontend')}>
+      <IoLogoJavascript /> JavaScript
+    </span>
 
-                </div>
-            </div>
+    <span className={getClass('frontend')}>
+      <FaHtml5 /> HTML
+    </span>
 
-            <div className="skills-group">
-                <h3>AI & ML</h3>
-                <div className="skills-cloud">
-                    <span className={getClass('ai')}>
-                        <FaRobot /> OpenCV
-                    </span>    </div>
-            </div>
+    <span className={getClass('frontend')}>
+      <FaCss3 /> CSS
+    </span>
 
-            <div className="skills-group">
-                <h3>Backend</h3>
-                <div className="skills-cloud">
-                    <span className="skill muted"><FaNodeJs />Node.js</span>
-                    <span className="skill muted"><SiMysql /> MySQL</span>
-                    <span className="skill muted">APIs</span>
-                    <span className={getClass('backend')}>
-                        <SiDjango /> Django
-                    </span>
-                </div>
-            </div>
+    <span className={getClass('frontend')}>
+      <BsFiletypeScss /> SCSS
+    </span>
 
-            <div className="skills-group">
-                <h3>Programming Languages</h3>
-                <div className="skills-cloud">
-                    <span className={getClass('backend')}>
-                        <IoLogoPython /> Python
-                    </span>
+    <span className="skill muted">
+      <FaNodeJs /> Node.js
+    </span>
 
-                    <span className={getClass('fundamentals')}>
-                        <SiCplusplus /> C++
-                    </span>
-                </div>
-            </div>
+    <span className="skill muted">
+      <SiMysql /> MySQL
+    </span>
+
+    <span className="skill muted">
+      APIs
+    </span>
+
+    <span className={getClass('backend')}>
+      <SiDjango /> Django
+    </span>
+  </div>
+</div>
+
+<div className="skills-group">
+  <h3>{'>'} shipping</h3>
+
+  <div className="skills-cloud">
+
+    <span className={getClass('fundamentals')}>
+      <IoMdGitMerge /> Git
+    </span>
+
+    <span className={getClass('fundamentals')}>
+      <FaGithub /> GitHub
+    </span>
+
+    <span className={getClass('fundamentals')}>
+      <VscVscode /> VS Code
+    </span>
+
+    <span className={getClass('fundamentals')}>
+      <SiGithubcopilot /> Copilot
+    </span>
+
+    <span className={getClass('fundamentals')}>
+      <SiJira /> Jira
+    </span>
+
+    <span className={getClass('devops')}>
+      <FaDocker /> Docker
+    </span>
+
+    <span className="skill">
+      <FaJenkins /> Jenkins
+    </span>
+
+    <span className="skill">
+      <DiGoogleCloudPlatform /> GCP
+    </span>
+
+    <span className="skill">
+      <SiVercel /> Vercel
+    </span>
+
+  </div>
+</div>
+
+<div className="skills-group">
+  <h3>{'>'} learning</h3>
+
+  <div className="skills-cloud">
+
+    <span className={getClass('backend')}>
+      <IoLogoPython /> Python
+    </span>
+
+    <span className={getClass('fundamentals')}>
+      <SiCplusplus /> C++
+    </span>
+
+  </div>
+</div>
 
         </div>
     );

@@ -11,64 +11,51 @@ const categories = [
     'devops',
     'ai'
 ];
-
+const commands = [
+    "> stack --current",
+    "> tooling --active",
+    "> tests --running",
+    "> automation --enabled",
+    "> systems --online"
+];
 function Stack() {
+    const [commandIndex, setCommandIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCommandIndex((prev) =>
+                (prev + 1) % commands.length
+            );
+        }, 3500);
+
+        return () => clearInterval(interval);
+    }, []);
     const [glow, setGlow] = useState(true);
     const [activeCategory, setActiveCategory] = useState(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          setGlow(false);
+            setGlow(false);
         }, 2500); // duration of glow
-      
+
         return () => clearTimeout(timer);
-      }, []);
+    }, []);
     return (
-        <div className="">
-            <h2>Technical Skills</h2>
+        <div className="hero">
+            {/* <h1> {'>'} stack --current </h1> */}
+            <h1 className="stack-heading">
+                {commands[commandIndex]}
+                <span className="cursor">_</span>
+            </h1>
             <p className="skills-focus">
-  Primary focus: Frontend engineering & UI systems
-</p>
+                {/* Primary focus: Frontend engineering & UI systems */}
+            </p>
             <p className="skills-hint">
-            Interactive breakdown by category (hover to explore skills)
+                {/* Interactive breakdown by category (hover to explore skills) */}
             </p>
             <div className="skills-section">
 
-                <div className="radar-wrapper">
-
-                    <div className={`radar-bg ${glow ? 'glow' : ''}`}>
-                        <RadarChart
-                            height={400}
-                            series={[{ data: [85, 70, 90, 65, 60, 88] }]}
-                            radar={{
-                                max: 100,
-                                metrics: [
-                                    'Frontend',
-                                    'Backend',
-                                    'Testing & QA',
-                                    'DevOps & Cloud',
-                                    'AI/ML',
-                                    'Fundamentals'
-                                ],
-                            }}
-                        />
-                    </div>
-
-                    <div className="radar-labels">
-                        {categories.map((cat) => (
-                            <span
-                                key={cat}
-                                onMouseEnter={() => setActiveCategory(cat)}
-                                onMouseLeave={() => setActiveCategory(null)}
-                                className={`radar-label ${cat}`}
-                            >
-                                {cat}
-                            </span>
-                        ))}
-                    </div>
-
-                </div>
-
+                
                 <div className="skills-content">
                     <Skills activeCategory={activeCategory} />
                 </div>
