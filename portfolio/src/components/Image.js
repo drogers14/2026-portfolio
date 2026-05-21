@@ -70,7 +70,7 @@ function Image({ label, icon: Icon, link, type }) {
                         </text>
                     </svg>
 
-                    <img src={currentImage} alt="profile" className="avatar" />
+                    <img src={currentImage} loading="lazy" alt="profile" className="avatar" />
                 </div>
             </div>
         </>
