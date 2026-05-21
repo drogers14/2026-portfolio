@@ -75,39 +75,81 @@ export default function IntroCard() {
     }, []);
     const [latestCommit, setLatestCommit] = useState(null);
 
-useEffect(() => {
-  fetch("https://api.github.com/repos/drogers14/playwright-automation-framework/commits")
-    .then((res) => res.json())
-    .then((data) => {
-      setLatestCommit(data[0]);
-    });
-}, []);
+    useEffect(() => {
+        fetch("https://api.github.com/repos/drogers14/playwright-automation-framework/commits")
+            .then((res) => res.json())
+            .then((data) => {
+                setLatestCommit(data[0]);
+            });
+    }, []);
     return (
 
         <section className="hero">
 
-            {/* NAV SPACING */}
-            {/* <div className="hero-spacer"></div> */}
+            {/* TOP */}
+            <div className="hero-top">
+                <span className="hero-marquee">
+                    Software Engineer in Test · QA Automation · Developer Tooling
+                </span>
 
-            {/* HERO CENTER */}
-            <div className="hero-center-layout">
+                <h1 className="title">
+                    <span className="first-name">Destiny</span> Rogers
+                    
+                </h1>
+                <div className="open-to-work-badge">
+                        <TbUserCode />
+                        Open to Work
+                    </div>
+            </div>
+
+            {/* LEFT */}
+            <div className="hero-main">
+                <div className="hero-left">
+                    <p className="bio">
+
+                        {/* <span style={{fontWeight: "700"}}>Software Engineer in Test</span>  */}
+                        Building <span className="highlighter">reliable</span> automation systems through
+                        automation engineering, <span className="highlighter">CI/CD</span> workflows,
+                        <span className="highlighter">scalable testing</span>, and  <span className="highlighter">quality-focused</span> tooling.
+                        Outside of engineering, I enjoy photography, filmmaking, and exploring thoughtful digital experiences.
+                    </p>
 
 
-                <div className="hero-portrait-row">
+                    <div className="tags centered">
 
-                    {/* LEFT */}
-                    <div className="hero-meta-side">
+                        <span className="tag-pill">
+                            🧪 QA Explorer
+                        </span>
 
-                        {/* SOCIALS */}
-                        {/* OPEN TO WORK */}
-                        <div className="open-to-work-badge">
-                            <TbUserCode />
-                            Open to Work
-                            {/* · Software Engineer | QA Automation */}
-                        </div>
-                        <p className="mini-label">Connect with me</p>
+                        <span className="tag-pill">
+                            ⚙️ Automater
+                        </span>
 
-                        <div className="social-bar centered">
+                        <span className="tag-pill">
+                            🧩 Bug Hunter
+                        </span>
+
+                    </div>
+
+                    <p className="description meta">
+                        <MdOutlineLocationOn />
+                        San Francisco, CA
+                        <span className="time">
+                            {time} PST
+                        </span>
+                    </p>
+                </div>
+                {/* </div> */}
+                {/* RIGHT */}
+                <div className="hero-right">
+                    
+
+                    <Image />
+
+                    <div className="social-row">
+                        <span className="mini-label">[ Connect with me ]</span>
+
+                        <div className="social-bar">
 
                             <Social
                                 label="LinkedIn"
@@ -133,85 +175,41 @@ useEffect(() => {
                         </div>
 
 
+                       
+
+
                     </div>
 
-                    {/* CENTER */}
-                    <div className="portrait-system">
-                        <div className="hero-heading">
-                            <span className="hero-marquee">Software Engineer in Test · QA Automation · Developer Tooling</span>
-                            <h1 className="title">
-                                <span className="first-name">Destiny</span> Rogers
-                                {/* <span className="eyes-wrapper"> */}
-                                {/* <Eyes className="eyes-base" />
+                    {/* <span className="eyes-wrapper"> */}
+                    {/* <Eyes className="eyes-base" />
 
                                     <div className="pupil left"></div>
                                     <div className="pupil right"></div>
                                 </span>  */}
 
-                            </h1>
-
-                            <h2 className="subtitle">
-                                {/* Software Engineer in Test */}
-                            </h2>
-                            {/* <span className="wave">👋</span> */}
-                        </div>
-
-                        <Image />
-
-                        <div className="nw">
-                            <span className="dot"></span>
-                            building
-                        </div>
-
-                    </div>
-
-                    {/* RIGHT */}
-                    <div className="hero-summary">
-
-                        <p>
-                            {/* <span style={{fontWeight: "700"}}>Software Engineer in Test</span>  */}
-                            Building <span className="highlighter">reliable</span> automation systems through
-                            automation engineering, <span className="highlighter">CI/CD</span> workflows,
-                            <span className="highlighter">scalable testing</span>, and  <span className="highlighter">quality-focused</span> tooling.
-                            Outside of engineering, I enjoy photography, filmmaking, and exploring thoughtful digital experiences.
-                        </p>
-                        {/* TAGS */}
-                        <div className="tags centered">
-
-                            <span className="tag-pill">
-                                🧪 QA Explorer
-                            </span>
-
-                            <span className="tag-pill">
-                                ⚙️ Automater
-                            </span>
-
-                            <span className="tag-pill">
-                                🧩 Bug Hunter
-                            </span>
-
-                            {/* <span className="tag-pill">
-                                ☕ Java fueled
-                            </span> */}
-
-                        </div>
-                        <p className="description meta">
-                            <MdOutlineLocationOn />
-                            San Francisco, CA
-                            <span className="time">
-                                {time} PST
-                            </span>
-                        </p>
 
 
-                    </div>
+                    {/* <h2 className="subtitle"> */}
+                    {/* Software Engineer in Test */}
+                    {/* </h2> */}
+                    {/* <span className="wave">👋</span> */}
+
+                    {/* <Image /> */}
+
+
+
+
+
+
+
 
                 </div>
 
-
-
             </div>
-
+            <div className="nw">
+                            <span className="dot"></span>
+                            building
+                        </div>
             {/* ORBIT SECTION */}
             <div className="orbit-section">
 

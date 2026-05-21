@@ -9,16 +9,17 @@ import dedny5 from '../memoji5.png'
 
 import { useRef, useEffect, useState } from 'react';
 
+const images = [
+    // dedny,
+    dedny1,
+    dedny2,
+    dedny3,
+    dedny4,
+    dedny5
+];
 
 function Image({ label, icon: Icon, link, type }) {
-    const images = [
-        // dedny,
-        dedny1,
-        dedny2,
-        dedny3,
-        dedny4,
-        dedny5
-    ];
+    
     const hoverImage = dedny;
 
     const [index, setIndex] = useState(0);
@@ -30,7 +31,7 @@ function Image({ label, icon: Icon, link, type }) {
 
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length);
-        }, 1400);
+        }, 2600);
 
         return () => clearInterval(interval);
     }, [hovered, images.length]);
@@ -47,30 +48,30 @@ function Image({ label, icon: Icon, link, type }) {
                 onMouseLeave={() => setHovered(false)}
             >
                 <div className="avatar-wrapper">
-  <svg viewBox="0 0 440 440" className="arc-svg">
-    <defs>
-      <path
-        id="arcPath"
-        d="
+                    <svg viewBox="0 0 440 440" className="arc-svg">
+                        <defs>
+                            <path
+                                id="arcPath"
+                                d="
         M 220,220
         m -210,0
         a 210,210 0 1,1 420,0
         a 210,210 0 1,1 -420,0"
-      />
-    </defs>
+                            />
+                        </defs>
 
-    <text fill="black">
-    <textPath href="#arcPath" startOffset="50%" textAnchor="middle">
-  {hovered
-    ? "✨ okay hi • nice to meet you • ✨ • ✨ okay hi • nice to meet you • ✨"
-    : "👀 try hovering • no pressure • :) • 👀 try hovering • no pressure • :) •"
-  }
-</textPath>
-    </text>
-  </svg>
+                        <text fill="black">
+                            <textPath href="#arcPath" startOffset="50%" textAnchor="middle">
+                                {hovered
+                                    ? "✨ okay hi • nice to meet you • ✨ • ✨ okay hi • nice to meet you • ✨"
+                                    : "👀 try hovering • no pressure • :) • 👀 try hovering • no pressure • :) •"
+                                }
+                            </textPath>
+                        </text>
+                    </svg>
 
-  <img src={currentImage} alt="profile" className="avatar" />
-</div>
+                    <img src={currentImage} alt="profile" className="avatar" />
+                </div>
             </div>
         </>
     );

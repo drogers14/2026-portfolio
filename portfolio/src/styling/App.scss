@@ -103,21 +103,58 @@ p {
 
 }
 .hero {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   max-width: 1280px;
   margin: 0 auto;
   padding: 40px;
   padding-top: 90px;
 
 }
-.hero-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  .hero-top {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: flex-start;
+  
+    gap: 12px;
+  }
+  @media (max-width: 900px) {
 
-  gap: 80px;
-}
+    .hero-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      gap: 32px;
+    }
+  
+  }
+  .hero-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+    align-items: start;
+    width: 100%;
+  }
 
 
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+  
+    align-items: flex-end;
+  
+    justify-self: end;
+  
+    max-width: 420px;
+  
+    padding-right: 200px;
+    margin-left: auto;
+
+    margin-top: -40px; 
+  }
 
 
 .sustainability-section {
@@ -138,7 +175,14 @@ p {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
-  opacity: 0.9;
+  opacity: 0.55;
+  margin-bottom: 10px;
+  text-align: left;
+  margin: 0;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
 }
 
 .grid-container {
@@ -178,7 +222,13 @@ p {
 }
 .social-bar {
   display: flex;
-  gap: 10px;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 12px;
+  // justify-content: flex-start;
+  // align-items: center;
 
   padding: 6px;
 
@@ -219,6 +269,18 @@ p {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@media (max-width: 900px) {
+
+  .image-container {
+    width: 240px;
+    height: 240px;
+  }
+
+  .arc-svg {
+    transform: scale(0.8);
+  }
+
 }
 .social-row-right {
   display: flex !important;
@@ -349,14 +411,21 @@ p {
 .social-row {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 
-  gap: 4px; /* 🔥 tighter */
+  gap: 14px;
 
-  padding: 4px;
-  margin-top: 10px;
+  width: fit-content;
+  // padding-top: 50px;
+  transform: translateY(-12px);
 
-  width: fit-content;  /* 🔥 prevents stretching */
+  padding: 8px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.32);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.45);
 }
 .social-row a {
   display: flex;
@@ -577,6 +646,7 @@ body {
   flex-wrap: nowrap;
   white-space: nowrap;
   padding-bottom: 96px;
+  padding-left: 224px;
 }
 
 .title {
@@ -593,7 +663,15 @@ text-align: left;
 
 
 }
+@media (max-width: 900px) {
 
+  .title {
+    font-size: clamp(48px, 14vw, 72px);
+    text-align: center;
+    line-height: 0.95;
+  }
+
+}
 .subtitle {
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -626,7 +704,17 @@ text-align: left;
   margin-left: 8px;
   margin-bottom: 12px;
 }
+@media (max-width: 900px) {
 
+  .hero-marquee {
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+
+    width: 100%;
+  }
+
+}
 .first-name {
   position: relative;
   display: inline-block;
@@ -673,6 +761,9 @@ text-align: left;
 .hero-meta-side {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
+  text-align: left;
 
   gap: 10px;
 
@@ -825,6 +916,9 @@ text-align: left;
 }
 
 .open-to-work-badge {
+  position: absolute;
+  top: 20px;
+  right: 0;
   display: inline-block;
   padding: 6px 12px;
   border-radius: 999px;
@@ -833,8 +927,9 @@ text-align: left;
   background: rgba(0, 255, 150, 0.12);
   color: #00c77a;
   border: 1px solid rgba(0, 255, 150, 0.35);
-  margin-bottom: -12px;
+  // margin-bottom: -12px;
   animation: pulseGlow 2.5s infinite ease-in-out;
+  // z-index: 20;
 }
 
 @keyframes pulseGlow {
@@ -895,7 +990,11 @@ text-align: left;
 .hero-left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  max-width: 520px;
+  padding-top: 20px;
+
+  gap: 18px;
 }
 .highlighter{
   // background-color: rgba(208, 255, 0, 0.435); 
@@ -950,4 +1049,44 @@ text-align: left;
 
 .eyes-wrapper {
   transform: translateY(14px);
+}
+
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .hero-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-description {
+    max-width: 320px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+}
+@media (max-width: 900px) {
+
+  .tag-row {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+}
+@media (max-width: 900px) {
+
+  .open-to-work-badge {
+    position: static;
+    margin-bottom: 8px;
+  }
+
+}
+@media (max-width: 900px) {
+
+  .hero-section {
+    padding-inline: 20px;
+  }
+
 }
