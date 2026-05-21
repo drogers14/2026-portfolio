@@ -4,9 +4,7 @@ function Projects() {
     return (
         <div className="hero">
             <h1 className="title">Projects</h1>
-            {/* <h1 className="projects-title">
-  Pro<span>jects</span>
-</h1> */}
+
             <h2><span style={{ color: '#dff58a'}}>{'>' }</span> Ideas Brought to Life</h2>
             <div className="projects-grid">
             <ProjectCard
@@ -44,10 +42,7 @@ function Projects() {
                 demo="https://www.destinyrogers.dev/"
                 status= "Active"
             />
-                        {/* <h1 className="title-hero"></h1> */}
 
-            {/* <ProjectCard description="🚧 Coming Soon! 🚧"/> */}
-           {/*  <ProjectCard /> */}
             </div>
         </div>
     )

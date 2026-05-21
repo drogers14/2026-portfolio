@@ -29,21 +29,7 @@
     font-size: 0.8rem;
     opacity: 0.6;
   }
-  .timeline-dot {
-    // position: absolute;
-    // left: -6px; /* fine-tuned to center on line */
-    // top: 6px;
-  
-    // width: 14px;
-    // height: 14px;
-  
-    // border-radius: 50%;
-    // background: linear-gradient(135deg, #7c5cff, #00d4ff);
-  
-    // box-shadow: 0 0 12px rgba(124, 92, 255, 0.6);
-    // animation: pulse 2s infinite;
 
-  }
   @keyframes pulse {
     0% { box-shadow: 0 0 0 rgba(124, 92, 255, 0.6); }
     50% { box-shadow: 0 0 12px rgba(124, 92, 255, 1); }
