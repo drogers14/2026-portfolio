@@ -32,6 +32,10 @@ export default function IntroCard() {
         title: "Sell Me a Coat",
         artist: "David Bowie"
       },
+      {
+        title: "Double Bass",
+        artist: "Gorillaz"
+      },
       ];
       const getRandomSong = () => {
         return songs[Math.floor(Math.random() * songs.length)];
