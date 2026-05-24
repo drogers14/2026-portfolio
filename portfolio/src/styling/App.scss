@@ -1040,3 +1040,61 @@ text-align: left;
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.carbon-badge {
+  display: inline-flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 12px;
+}
+
+.carbon-badge a {
+  text-decoration: none !important;
+
+  transition: all 0.25s ease;
+}
+
+/* top metric pill */
+/* CO2 metric */
+.carbon-badge a:first-of-type {
+  background: rgba(215,239,99,0.14);
+
+  border: 1px solid rgba(215,239,99,0.22);
+
+  color: #111 !important;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+  text-decoration: none !important;
+}
+
+/* Website Carbon link */
+.carbon-badge a:last-of-type {
+  color: #1ea7e1 !important;
+
+  font-size: 12px;
+
+  text-decoration: none !important;
+
+  opacity: 0.75;
+}
+
+/* bottom stat */
+.carbon-badge span:last-child {
+  font-size: 11px;
+
+  color: #777;
+
+  letter-spacing: 0.04em;
+}

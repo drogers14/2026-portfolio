@@ -1,5 +1,4 @@
 import React from "react";
-import '../styling/App.scss';
 
 import Image from './Image';
 import SignalCard from "./SignalCard";
@@ -12,6 +11,7 @@ import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
 import { MdEmail, MdOutlineLocationOn } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbUserCode } from "react-icons/tb";
+import '../styling/App.scss';
 
 export default function IntroCard() {
 
@@ -158,6 +158,20 @@ function getTimeAgo(date) {
   return 'just now';
 }
 
+useEffect(() => {
+    const script = document.createElement("script");
+  
+    script.src =
+      "https://unpkg.com/website-carbon-badges@1.1.3/b.min.js";
+  
+    script.defer = true;
+  
+    document.body.appendChild(script);
+  
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
     return (
 
@@ -327,7 +341,15 @@ function getTimeAgo(date) {
                     />
                     <SignalCard
                         label=""
-                        title={<span className="carbon-badge"><WebsiteCarbonBadge dark={false} url="www.destinyrogers.dev" /></span>}
+                        title={<span className="carbon-badge">
+                            {/* <WebsiteCarbonBadge url="www.destinyrogers.dev/" /> */}
+                            <div className="carbon-badge">
+      <div
+        id="wcb"
+        className="carbonbadge"
+      ></div>
+    </div>
+                        </span>}
                         subtitle="optimized for performance + sustainability"
                         emoji="♻️"
                         status="SUSTAINABILITY IMPACT"
