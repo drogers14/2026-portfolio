@@ -64,6 +64,7 @@ export default function Education() {
     return (
 
         <div className="hero">
+            <h1 className="title">Education</h1>
             {/* MASTERS CARD */}
 
             <div className="edu-card">

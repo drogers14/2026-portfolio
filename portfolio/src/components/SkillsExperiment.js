@@ -20,7 +20,7 @@ function Skills({ activeCategory }) {
     return (
         <div className="">
 
-<h1> {'>'} stack --current </h1>
+<h1> {'>'} stack <span style={{color: "#00d4ff"}}>--current </span></h1>
 
 
             <div className="skills-group">
