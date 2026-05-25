@@ -16,8 +16,8 @@ export default function SignalCard({
 
             <div className="signal-top">
 
-                <div className="signal-status" style={{ color: props.statusColor }}>
-                    <span className="live-dot"></span>
+                <div className="signal-status" >
+                    <span className="live-dot" style={{ backgroundColor: props.statusColor }}></span>
 
                     <p>{status}</p>
                 </div>

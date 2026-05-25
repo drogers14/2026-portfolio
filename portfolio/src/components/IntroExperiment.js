@@ -1,5 +1,4 @@
 import React from "react";
-import '../styling/App.scss';
 
 import Image from './Image';
 import SignalCard from "./SignalCard";
@@ -8,44 +7,50 @@ import Social from '../Social';
 import Eyes from './Eyes';
 import { useEffect, useState } from "react";
 import { WebsiteCarbonBadge } from 'react-websitecarbon-badge';
+import { co2 } from '@tgwf/co2'
 
 import { MdEmail, MdOutlineLocationOn } from "react-icons/md";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { TbUserCode } from "react-icons/tb";
+import '../styling/App.scss';
 
 export default function IntroCard() {
-
+    const sustainability = {
+        co2: "0.03g",
+        cleanerThan: "96%",
+        greenHosting: true,
+        updated: "May 2026"
+    };
     // const currentSong = {
     //     title: "A Forest",
     //     artist: "The Cure"
     // };
     const songs = [
         {
-          title: "A Forest",
-          artist: "The Cure"
+            title: "A Forest",
+            artist: "The Cure"
         },
         {
-          title: "Teardrop",
-          artist: "Massive Attack"
+            title: "Teardrop",
+            artist: "Massive Attack"
         },
         {
-        title: "Sell Me a Coat",
-        artist: "David Bowie"
-      },
-      {
-        title: "Double Bass",
-        artist: "Gorillaz"
-      },
-      ];
-      const getRandomSong = () => {
+            title: "Sell Me a Coat",
+            artist: "David Bowie"
+        },
+        {
+            title: "Double Bass",
+            artist: "Gorillaz"
+        },
+    ];
+    const getRandomSong = () => {
         return songs[Math.floor(Math.random() * songs.length)];
-      };
-      const [currentSong] = useState(getRandomSong);
+    };
+    const [currentSong] = useState(getRandomSong);
 
     // const randomIndex = Math.floor(Math.random() * songs.length);
     // const currentSong = songs[randomIndex];
     const [time, setTime] = useState("");
-
     useEffect(() => {
 
         const updateTime = () => {
@@ -108,55 +113,56 @@ export default function IntroCard() {
     }, []);
 
     let statusColor = "#4ade80";
-let statusLabel = "ACTIVE";
+    let statusLabel = "ACTIVE";
 
-let lastPushDate = null;
-let hoursAgo = 0;
+    let lastPushDate = null;
+    let hoursAgo = 0;
 
-if (latestCommit) {
-  lastPushDate = new Date(
-    latestCommit.commit.author.date
-  );
+    if (latestCommit) {
+        lastPushDate = new Date(
+            latestCommit.commit.author.date
+        );
 
-  hoursAgo =
-    (Date.now() - lastPushDate.getTime()) /
-    (1000 * 60 * 60);
+        hoursAgo =
+            (Date.now() - lastPushDate.getTime()) /
+            (1000 * 60 * 60);
 
-  if (hoursAgo > 24) {
-    statusColor = "#d7ef63";
-    statusLabel = "QUIET";
-  }
+        if (hoursAgo > 24) {
+            statusColor = "#d7ef63";
+            statusLabel = "QUIET";
+        }
 
-  if (hoursAgo > 72) {
-    statusColor = "#b0b0b0";
-    statusLabel = "IDLE";
-  }
-}
-const relativeTime = new Intl.RelativeTimeFormat('en', {
-  numeric: 'auto',
-});
-
-function getTimeAgo(date) {
-  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
-
-  const intervals = {
-    year: 31536000,
-    month: 2592000,
-    day: 86400,
-    hour: 3600,
-    minute: 60,
-  };
-
-  for (const [unit, value] of Object.entries(intervals)) {
-    const diff = Math.floor(seconds / value);
-
-    if (diff >= 1) {
-      return relativeTime.format(-diff, unit);
+        if (hoursAgo > 72) {
+            statusColor = "#b0b0b0";
+            statusLabel = "IDLE";
+        }
     }
-  }
+    const relativeTime = new Intl.RelativeTimeFormat('en', {
+        numeric: 'auto',
+    });
 
-  return 'just now';
-}
+    function getTimeAgo(date) {
+        const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+
+        const intervals = {
+            year: 31536000,
+            month: 2592000,
+            day: 86400,
+            hour: 3600,
+            minute: 60,
+        };
+
+        for (const [unit, value] of Object.entries(intervals)) {
+            const diff = Math.floor(seconds / value);
+
+            if (diff >= 1) {
+                return relativeTime.format(-diff, unit);
+            }
+        }
+
+        return 'just now';
+    }
+
 
 
     return (
@@ -171,12 +177,12 @@ function getTimeAgo(date) {
 
                 <h1 className="title">
                     <span className="first-name">Destiny</span> Rogers
-                    
+
                 </h1>
                 <div className="open-to-work-badge">
-                        <TbUserCode />
-                        Open to Work
-                    </div>
+                    <TbUserCode />
+                    Open to Work
+                </div>
             </div>
 
             {/* LEFT */}
@@ -219,7 +225,7 @@ function getTimeAgo(date) {
                 {/* </div> */}
                 {/* RIGHT */}
                 <div className="hero-right">
-                    
+
 
                     <Image />
 
@@ -252,7 +258,7 @@ function getTimeAgo(date) {
                         </div>
 
 
-                       
+
 
 
                     </div>
@@ -277,9 +283,9 @@ function getTimeAgo(date) {
 
             </div>
             <div className="nw">
-                            <span className="dot"></span>
-                            building
-                        </div>
+                <span className="dot"></span>
+                building
+            </div>
             {/* ORBIT SECTION */}
             <div className="orbit-section">
 
@@ -296,9 +302,9 @@ function getTimeAgo(date) {
                         title="Playwright Framework"
                         subtitle={
                             latestCommit
-                              ? `${latestCommit.commit.message} · pushed ${getTimeAgo(lastPushDate)}`
-                              : "loading..."
-                          }
+                                ? `${latestCommit.commit.message} · pushed ${getTimeAgo(lastPushDate)}`
+                                : "loading..."
+                        }
                         emoji={<a href="https://github.com/drogers14/playwright-automation-framework"
                             target="_blank"
                             rel="noreferrer"
@@ -306,7 +312,7 @@ function getTimeAgo(date) {
                         >⚙️</a>}
                         status={statusLabel}
                         statusColor={statusColor}
-                        // opt={latestCommit?.commit.author.date}
+                    // opt={latestCommit?.commit.author.date}
                     />
 
                     <SignalCard
@@ -326,11 +332,20 @@ function getTimeAgo(date) {
 
                     />
                     <SignalCard
-                        label=""
-                        title={<span className="carbon-badge"><WebsiteCarbonBadge dark={false} url="www.destinyrogers.dev" /></span>}
-                        subtitle="optimized for performance + sustainability"
+                        label={`cleaner than ${sustainability.cleanerThan} pages tested.`}
+
+                        title={`${sustainability.co2} CO₂/view`}
+                        subtitle={`updated ${sustainability.updated}`}
                         emoji="♻️"
                         status="SUSTAINABILITY IMPACT"
+                        opt={<p><a
+                            href="https://www.websitecarbon.com/website/destinyrogers-dev/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="carbon-verify"
+                        >
+                            verified by Website Carbon ↗
+                        </a></p>}
 
                     />
                 </div>

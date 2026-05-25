@@ -19,7 +19,7 @@
     --lh-normal: 1.5;
     --lh-relaxed: 1.7;
   
-    /* 🧴 Base / Background system */
+    /* Base / Background system */
   --bg-0: #FFFFFF;
   --bg-1: #F7FAFC;
   --bg-2: #EEF3F8;
@@ -382,7 +382,7 @@ gap: 14px;
   padding: 0;
   margin: 0;
 
-  flex: 0 0 auto; /* 🔥 prevents flex growth */
+  flex: 0 0 auto; 
 
   border-radius: 6px;
 
@@ -452,7 +452,7 @@ gap: 14px;
   // object-fit: cover;
 }
 .avatar-wrapper {
-  position: relative; /* 🔥 REQUIRED */
+  position: relative; 
   width: 320px;
   height: 320px;
 }
@@ -808,7 +808,6 @@ text-align: left;
   opacity: 0.6;
 }
 
-/* 🔥 interests row */
 .interests-row {
   display: flex;
   flex-wrap: wrap;
@@ -1039,4 +1038,62 @@ text-align: left;
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.carbon-badge {
+  display: inline-flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 6px;
+
+  font-size: 12px;
+}
+
+.carbon-badge a {
+  text-decoration: none !important;
+
+  transition: all 0.25s ease;
+}
+
+/* top metric pill */
+/* CO2 metric */
+.carbon-badge a:first-of-type {
+  background: rgba(215,239,99,0.14);
+
+  border: 1px solid rgba(215,239,99,0.22);
+
+  color: #111 !important;
+
+  padding: 8px 16px;
+
+  border-radius: 999px;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+  text-decoration: none !important;
+}
+
+/* Website Carbon link */
+.carbon-badge a:last-of-type {
+  color: #1ea7e1 !important;
+
+  font-size: 12px;
+
+  text-decoration: none !important;
+
+  opacity: 0.75;
+}
+
+/* bottom stat */
+.carbon-badge span:last-child {
+  font-size: 11px;
+
+  color: #777;
+
+  letter-spacing: 0.04em;
 }
