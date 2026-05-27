@@ -162,8 +162,15 @@ export default function IntroCard() {
 
         return 'just now';
     }
-
-
+    const [regressionHealth, setRegressionHealth] = useState(null);
+    useEffect(() => {
+        fetch("https://raw.githubusercontent.com/drogers14/playwright-automation-framework/main/test-results/regression-summary.json")
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setRegressionHealth(data);
+            });
+    }, []);
 
     return (
 
@@ -315,22 +322,40 @@ export default function IntroCard() {
                     // opt={latestCommit?.commit.author.date}
                     />
 
-                    <SignalCard
-                        label="CURRENTLY LISTENING"
+                        <SignalCard
+                            label="REGRESSION HEALTH"
+                            subtitle={`${regressionHealth?.browsers || 0} browsers verified`}
+                            title={`${regressionHealth?.testsPassed || 0} tests passing`
+                            }
+                            emoji={<a href="https://github.com/drogers14/playwright-automation-framework"
+                                target="_blank"
+                                rel="noreferrer"
+                                style={{ textDecoration: "none" }}
+                            >⚙️</a>}
+                            status={regressionHealth?.status || "SYNCING"}
+                            statusColor={statusColor}
+                            opt={
+                                regressionHealth?.lastRun
+                                  ? `last run ${getTimeAgo(new Date(regressionHealth.lastRun))}`
+                                  : "loading..."
+                              }
+                        />
+                        <SignalCard
+                            label="CURRENTLY LISTENING"
                         title={currentSong.title}
                         subtitle={currentSong.artist}
                         emoji="🎵"
                         status="NOW PLAYING"
                     />
 
-                    <SignalCard
+                    {/* <SignalCard
                         label="RECENTLY EXPLORED"
                         title="Golden Gate Park"
                         subtitle="foggy walks + coffee shops"
                         emoji="🌁"
                         status="RECENT"
 
-                    />
+                    /> */}
                     <SignalCard
                         label={`cleaner than ${sustainability.cleanerThan} pages tested.`}
 
@@ -338,14 +363,14 @@ export default function IntroCard() {
                         subtitle={`updated ${sustainability.updated}`}
                         emoji="♻️"
                         status="SUSTAINABILITY IMPACT"
-                        opt={<p><a
+                        opt={<a
                             href="https://www.websitecarbon.com/website/destinyrogers-dev/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="carbon-verify"
                         >
                             verified by Website Carbon ↗
-                        </a></p>}
+                        </a>}
 
                     />
                 </div>
