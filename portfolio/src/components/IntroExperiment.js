@@ -42,6 +42,10 @@ export default function IntroCard() {
             title: "Double Bass",
             artist: "Gorillaz"
         },
+        {
+            title: "Heaven or Las Vegas",
+            artist: "Cocteau Twins"
+        },
     ];
     const getRandomSong = () => {
         return songs[Math.floor(Math.random() * songs.length)];
