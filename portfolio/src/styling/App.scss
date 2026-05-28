@@ -45,16 +45,16 @@
   --warm-1: #FAFAF8;
   --warm-2: #F3F1ED;
 
-  /* ✍️ Typography */
+  /*  Typography */
   --text-0: #1F2933;
   --text-1: rgba(31, 41, 51, 0.75);
   --text-2: rgba(31, 41, 51, 0.55);
 
-  /* ✨ Glow system (subtle only) */
+  /*  Glow system (subtle only) */
   --glow: rgba(111, 159, 190, 0.10);
   --glow-soft: rgba(111, 159, 190, 0.06);
 
-  /* 🧱 Borders */
+  /*  Borders */
   --border-light: rgba(31, 41, 51, 0.06);
   --border: rgba(31, 41, 51, 0.10);
   }
@@ -443,13 +443,7 @@ gap: 14px;
   position: absolute;
   top: 0;
   left: 0;
-  // position: relative;
-  // z-index: 2;
-  // height: auto;
 
-  // width: min(340px, 100%);
-  // max-width: 340px;
-  // object-fit: cover;
 }
 .avatar-wrapper {
   position: relative; 
@@ -808,31 +802,31 @@ text-align: left;
   opacity: 0.6;
 }
 
-.interests-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
+// .interests-row {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 10px;
+//   margin-top: 10px;
+// }
 
-.interests-row span {
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 13px;
+// .interests-row span {
+//   padding: 6px 12px;
+//   border-radius: 999px;
+//   font-size: 13px;
 
-  background: rgba(255, 255, 255, 0.06);
+//   background: rgba(255, 255, 255, 0.06);
 
-  border: 1px solid rgba(255, 255, 255, 0.1);
+//   border: 1px solid rgba(255, 255, 255, 0.1);
 
-  transition: all 0.25s ease;
-  animation: float 6s ease-in-out infinite;
+//   transition: all 0.25s ease;
+//   animation: float 6s ease-in-out infinite;
 
-}
+// }
 
-.interests-row span:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(124, 92, 255, 0.4);
-}
+// .interests-row span:hover {
+//   transform: translateY(-2px);
+//   box-shadow: 0 0 15px rgba(124, 92, 255, 0.4);
+// }
 
 
 

@@ -51,6 +51,7 @@
     font-size: 12px;
     letter-spacing: 1px;
     color: #aaa;
+    text-transform: uppercase;
 }
 
 .live-dot {
@@ -99,3 +100,17 @@
 
     line-height: 1.5;
 }
+
+.signal-meta {
+    margin-top: 12px;
+  
+    font-size: 12px;
+  
+    opacity: 0.65;
+  
+    letter-spacing: 0.02em;
+  
+    display: inline-flex;
+  
+    align-items: center;
+  }

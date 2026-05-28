@@ -41,9 +41,11 @@ export default function SignalCard({
                 <span className="signal-subtitle">
                     {subtitle}
                 </span>
-                <span className="signal-subtitle">
-                    {opt}
-                </span>
+                {opt && (
+                    <span className="signal-meta">
+                        {opt}
+                    </span>
+                )}
             </div>
 
         </div>
