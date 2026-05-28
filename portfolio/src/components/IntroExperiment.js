@@ -327,7 +327,7 @@ export default function IntroCard() {
                             subtitle={`${regressionHealth?.browsers || 0} browsers verified`}
                             title={`${regressionHealth?.testsPassed || 0} tests passing`
                             }
-                            emoji={<a href="https://github.com/drogers14/playwright-automation-framework"
+                            emoji={<a href="https://github.com/drogers14/playwright-automation-framework/"
                                 target="_blank"
                                 rel="noreferrer"
                                 style={{ textDecoration: "none" }}
